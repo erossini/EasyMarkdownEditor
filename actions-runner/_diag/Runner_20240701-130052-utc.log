@@ -1,0 +1,190 @@
+[2024-07-01 13:00:52Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'Credentials': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'Runner': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.runner'
+[2024-07-01 13:00:53Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2024-07-01 13:00:53Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.22631.
+[2024-07-01 13:00:53Z INFO Listener] Version: 2.317.0
+[2024-07-01 13:00:53Z INFO Listener] Commit: 6dc005ee3690a0303e0d7269b6f60295d22dcfad
+[2024-07-01 13:00:53Z INFO Listener] Culture: en-GB
+[2024-07-01 13:00:53Z INFO Listener] UI Culture: en-GB
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO Listener] Validating directory permissions for: 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO CommandLineParser] Parse
+[2024-07-01 13:00:53Z INFO CommandLineParser] Parsing 5 args
+[2024-07-01 13:00:53Z INFO CommandLineParser] parsing argument
+[2024-07-01 13:00:53Z INFO CommandLineParser] HasArgs: False
+[2024-07-01 13:00:53Z INFO CommandLineParser] Adding Command: configure
+[2024-07-01 13:00:53Z INFO CommandLineParser] parsing argument
+[2024-07-01 13:00:53Z INFO CommandLineParser] HasArgs: True
+[2024-07-01 13:00:53Z INFO CommandLineParser] arg: url
+[2024-07-01 13:00:53Z INFO CommandLineParser] parsing argument
+[2024-07-01 13:00:53Z INFO CommandLineParser] HasArgs: True
+[2024-07-01 13:00:53Z INFO CommandLineParser] Adding option 'url': 'https://github.com/erossini/EasyMarkdownEditor'
+[2024-07-01 13:00:53Z INFO CommandLineParser] parsing argument
+[2024-07-01 13:00:53Z INFO CommandLineParser] HasArgs: True
+[2024-07-01 13:00:53Z INFO CommandLineParser] arg: token
+[2024-07-01 13:00:53Z INFO CommandLineParser] parsing argument
+[2024-07-01 13:00:53Z INFO CommandLineParser] HasArgs: True
+[2024-07-01 13:00:53Z INFO CommandLineParser] Adding option 'token': '***'
+[2024-07-01 13:00:53Z INFO Listener] Arguments parsed
+[2024-07-01 13:00:53Z INFO Runner] ExecuteCommand
+[2024-07-01 13:00:53Z INFO ConfigurationStore] currentAssemblyLocation: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin\Runner.Listener.dll
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] binPath: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] RootFolder: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'Runner': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.runner'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] ConfigFilePath: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.runner
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'Credentials': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] CredFilePath: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_migrated'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] MigratedCredFilePath: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_migrated
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:53Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:53Z INFO HostContext] Well known config file 'Service': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.service'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.service
+[2024-07-01 13:00:53Z INFO CommandSettings] Flag 'help': 'False'
+[2024-07-01 13:00:53Z INFO CommandSettings] Flag 'version': 'False'
+[2024-07-01 13:00:53Z INFO CommandSettings] Flag 'commit': 'False'
+[2024-07-01 13:00:53Z INFO CommandSettings] Flag 'check': 'False'
+[2024-07-01 13:00:53Z INFO CommandSettings] Command 'configure': 'True'
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |                                                                              |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE: |                       
+[2024-07-01 13:00:53Z INFO Terminal] WRITE: Self-hosted runner registration
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE:                         |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: |                                                                              |
+[2024-07-01 13:00:53Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2024-07-01 13:00:53Z INFO ConfigurationManager] ConfigureAsync
+[2024-07-01 13:00:53Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2024-07-01 13:00:53Z INFO ConfigurationStore] IsConfigured()
+[2024-07-01 13:00:53Z INFO ConfigurationStore] IsConfigured: False
+[2024-07-01 13:00:53Z INFO ConfigurationManager] Is configured: False
+[2024-07-01 13:00:53Z INFO CommandSettings] Arg 'url': 'https://github.com/erossini/EasyMarkdownEditor'
+[2024-07-01 13:00:53Z INFO CommandSettings] Remove url from Arg dictionary.
+[2024-07-01 13:00:53Z INFO CommandSettings] Arg 'token': '***'
+[2024-07-01 13:00:53Z INFO CommandSettings] Remove token from Arg dictionary.
+[2024-07-01 13:00:58Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (FEDF:3E58F3:7542D5:7C2C69:6682A88A)
+[2024-07-01 13:00:58Z INFO ConfigurationManager] Using V2 flow: False
+[2024-07-01 13:00:58Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2024-07-01 13:00:58Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:00:58Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2024-07-01 13:00:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:00:58Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:00:58Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-07-01 13:00:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:00:58Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:00:58Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-07-01 13:00:58Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:00:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:00:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:00:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:00:59Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:00:59Z INFO ConfigurationManager] Test Connection complete.
+[2024-07-01 13:00:59Z INFO HostContext] Well known directory 'Bin': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\bin'
+[2024-07-01 13:00:59Z INFO HostContext] Well known directory 'Root': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner'
+[2024-07-01 13:00:59Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_rsaparams'
+[2024-07-01 13:00:59Z INFO RSAEncryptedFileKeyManager] Creating new RSA key using 2048-bit key length
+[2024-07-01 13:00:59Z INFO RSAEncryptedFileKeyManager] Successfully saved RSA key parameters to file C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_rsaparams
+[2024-07-01 13:01:00Z INFO CommandSettings] Arg 'runnergroup': ''
+[2024-07-01 13:01:00Z INFO CommandSettings] Flag 'unattended': 'False'
+[2024-07-01 13:01:00Z INFO PromptManager] ReadValue
+[2024-07-01 13:01:00Z INFO Terminal] WRITE: Enter the name of the runner group to add this runner to: 
+[2024-07-01 13:01:00Z INFO Terminal] WRITE: [press Enter for Default] 
+[2024-07-01 13:01:00Z INFO Terminal] READ LINE
+[2024-07-01 13:01:06Z INFO Terminal] Read value: ''
+[2024-07-01 13:01:06Z INFO PromptManager] Falling back to the default: 'Default'
+[2024-07-01 13:01:06Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:01:06Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2024-07-01 13:01:06Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2024-07-01 13:01:06Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2024-07-01 13:01:06Z INFO CommandSettings] Arg 'name': ''
+[2024-07-01 13:01:06Z INFO CommandSettings] Flag 'unattended': 'False'
+[2024-07-01 13:01:06Z INFO PromptManager] ReadValue
+[2024-07-01 13:01:06Z INFO Terminal] WRITE: Enter the name of runner: 
+[2024-07-01 13:01:06Z INFO Terminal] WRITE: [press Enter for ENRICOSURFACE] 
+[2024-07-01 13:01:06Z INFO Terminal] READ LINE
+[2024-07-01 13:01:09Z INFO Terminal] Read value: ''
+[2024-07-01 13:01:09Z INFO PromptManager] Falling back to the default: 'ENRICOSURFACE'
+[2024-07-01 13:01:09Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:01:09Z INFO CommandSettings] Arg 'labels': ''
+[2024-07-01 13:01:09Z INFO CommandSettings] Flag 'unattended': 'False'
+[2024-07-01 13:01:09Z INFO PromptManager] ReadValue
+[2024-07-01 13:01:09Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Windows', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2024-07-01 13:01:09Z INFO Terminal] WRITE: [press Enter to skip] 
+[2024-07-01 13:01:09Z INFO Terminal] READ LINE
+[2024-07-01 13:01:15Z INFO Terminal] Read value: ''
+[2024-07-01 13:01:15Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:01:15Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2024-07-01 13:01:15Z INFO CommandSettings] Flag 'no-default-labels': 'False'
+[2024-07-01 13:01:15Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2024-07-01 13:01:15Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2024-07-01 13:01:15Z INFO ConfigurationStore] Saving OAuth credential @ C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials
+[2024-07-01 13:01:15Z INFO ConfigurationStore] Credentials Saved.
+[2024-07-01 13:01:15Z INFO ConfigurationStore] HasCredentials()
+[2024-07-01 13:01:15Z INFO ConfigurationStore] stored True
+[2024-07-01 13:01:15Z INFO CredentialManager] GetCredentialProvider
+[2024-07-01 13:01:15Z INFO CredentialManager] Creating type OAuth
+[2024-07-01 13:01:15Z INFO CredentialManager] Creating credential type: OAuth
+[2024-07-01 13:01:15Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_rsaparams
+[2024-07-01 13:01:15Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:01:15Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2024-07-01 13:01:15Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:01:15Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:01:15Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-07-01 13:01:15Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:01:15Z INFO RunnerServer] EstablishVssConnection
+[2024-07-01 13:01:15Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-07-01 13:01:15Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-07-01 13:01:16Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:01:16Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:01:16Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-07-01 13:01:16Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_rsaparams
+[2024-07-01 13:01:16Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Projects\GitHub\EasyMarkdownEditor\actions-runner\.credentials_rsaparams
+[2024-07-01 13:01:16Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2024-07-01 13:01:16Z INFO CommandSettings] Arg 'work': ''
+[2024-07-01 13:01:16Z INFO CommandSettings] Flag 'unattended': 'False'
+[2024-07-01 13:01:16Z INFO PromptManager] ReadValue
+[2024-07-01 13:01:16Z INFO Terminal] WRITE: Enter name of work folder: 
+[2024-07-01 13:01:16Z INFO Terminal] WRITE: [press Enter for _work] 
+[2024-07-01 13:01:16Z INFO Terminal] READ LINE
+[2024-07-01 13:01:22Z INFO Terminal] Read value: ''
+[2024-07-01 13:01:22Z INFO PromptManager] Falling back to the default: '_work'
+[2024-07-01 13:01:22Z INFO ConfigurationStore] Saving runner settings.
+[2024-07-01 13:01:22Z INFO ConfigurationStore] Settings Saved.
+[2024-07-01 13:01:22Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:01:22Z INFO Terminal] WRITE LINE: 
+[2024-07-01 13:01:22Z INFO CommandSettings] Flag 'runasservice': 'False'
+[2024-07-01 13:01:22Z INFO CommandSettings] Flag 'unattended': 'False'
+[2024-07-01 13:01:22Z INFO PromptManager] ReadValue
+[2024-07-01 13:01:22Z INFO Terminal] WRITE: Would you like to run the runner as service? (Y/N) 
+[2024-07-01 13:01:22Z INFO Terminal] WRITE: [press Enter for N] 
+[2024-07-01 13:01:22Z INFO Terminal] READ LINE
+[2024-07-01 13:01:25Z INFO Terminal] Read value: 'y'
+[2024-07-01 13:01:25Z INFO ConfigurationManager] Configuring to run the agent as service
+[2024-07-01 13:01:25Z ERR  WindowsServiceControlManager] Needs Administrator privileges for configure runner as windows service.
+[2024-07-01 13:01:25Z ERR  Runner] System.Security.SecurityException: Needs Administrator privileges for configuring runner as windows service.
+   at GitHub.Runner.Listener.Configuration.WindowsServiceControlManager.ConfigureService(RunnerSettings settings, CommandSettings command)
+   at GitHub.Runner.Listener.Configuration.ConfigurationManager.ConfigureAsync(CommandSettings command)
+   at GitHub.Runner.Listener.Runner.ExecuteCommand(CommandSettings command)
+[2024-07-01 13:01:25Z ERR  Terminal] WRITE ERROR: Needs Administrator privileges for configuring runner as windows service.
+[2024-07-01 13:01:25Z INFO Listener] Runner execution has finished with return code 1

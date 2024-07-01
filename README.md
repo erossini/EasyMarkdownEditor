@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/easymde.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde)
 [![npm version](https://img.shields.io/npm/v/easymde/next.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde/v/next)
-[![Build Status](https://github.com/erossini/EasyMarkdownEditor/actions/workflows/cd.yml/badge.svg)](https://github.com/erossini/EasyMarkdownEditor/actions/workflows/cd.yml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/ionaru/easy-markdown-editor/cd.yaml?branch=master&style=for-the-badge)](https://github.com/Ionaru/easy-markdown-editor/actions?query=branch%3Amaster)
 
 > This repository is a fork of
 [SimpleMDE, made by Sparksuite](https://github.com/sparksuite/simplemde-markdown-editor/).
@@ -350,7 +350,8 @@ fullscreen | toggleFullScreen | Toggle Fullscreen<br>fa fa-arrows-alt no-disable
 guide | [This link](https://www.markdownguide.org/basic-syntax/) | Markdown Guide<br>fa fa-question-circle
 undo | undo | Undo<br>fa fa-undo
 redo | redo | Redo<br>fa fa-redo
-
+indent | indent | Indent<br>fa fa-indent
+outdent | outdent | Outdent<br>fa fa-outdent
 
 ### Toolbar customization
 
