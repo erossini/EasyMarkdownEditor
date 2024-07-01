@@ -27,7 +27,7 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
 
 [![Preview](https://user-images.githubusercontent.com/3472373/51319377-26fe6e00-1a5d-11e9-8cc6-3137a566796d.png)](https://stackblitz.com/edit/easymde/)
 
-## Quick access
+## Table of content
 
 - [Easy Markdown Editor](#easymde---markdown-editor)
   - [Quick access](#quick-access)
@@ -533,25 +533,6 @@ EasyMDE is a continuation of SimpleMDE.
 SimpleMDE began as an improvement of [lepture's Editor project](https://github.com/lepture/editor), but has now taken on an identity of its own. It is bundled with [CodeMirror](https://github.com/codemirror/codemirror) and depends on [Font Awesome](http://fontawesome.io).
 
 CodeMirror is the backbone of the project and parses much of the Markdown syntax as it's being written. This allows us to add styles to the Markdown that's being written. Additionally, a toolbar and status bar have been added to the top and bottom, respectively. Previews are rendered by [Marked](https://github.com/chjj/marked) using GitHub Flavored Markdown (GFM).
-
-
-## SimpleMDE fork
-
-I originally made this fork to implement FontAwesome 5 compatibility into SimpleMDE. When that was done I submitted a [pull request](https://github.com/sparksuite/simplemde-markdown-editor/pull/666), which has not been accepted yet. This, and the project being inactive since May 2017, triggered me to make more changes and try to put new life into the project.
-
-Changes include:
-
-* FontAwesome 5 compatibility
-* Guide button works when editor is in preview mode
-* Links are now `https://` by default
-* Small styling changes
-* Support for Node 8 and beyond
-* Lots of refactored code
-* Links in preview will open in a new tab by default
-* TypeScript support
-
-My intention is to continue development on this project, improving it and keeping it alive.
-
 
 ## Hacking EasyMDE
 
