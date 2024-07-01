@@ -10,7 +10,8 @@ I have created the [Markdown Component](https://github.com/erossini/BlazorMarkdo
 So, from now, I'm going to maintain 2 different repositories:
 
 - [JavaScript library](https://github.com/erossini/EasyMarkdownEditor)
-- [Markdown Editor for Blazor](https://github.com/erossini/BlazorMarkdownEditor): [try the demo](https://markdown.puresourcecode.com/)
+- [Markdown Editor for Blazor](https://github.com/erossini/BlazorMarkdownEditor)
+- [Try the demo](https://markdown.puresourcecode.com/)
 
 For more information, please visit my blog [PureSourceCode](https://puresourcecode.com/javascript/new-markdowneditor-components-for-javascript-and-blazor/).
 
@@ -28,7 +29,7 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
 
 ## Quick access
 
-- [EasyMDE - Markdown Editor](#easymde---markdown-editor)
+- [Easy Markdown Editor](#easymde---markdown-editor)
   - [Quick access](#quick-access)
   - [Install EasyMDE](#install-easymde)
   - [How to use](#how-to-use)
@@ -50,7 +51,7 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
   - [Contributing](#contributing)
   - [License](#license)
 
-## Install EasyMDE
+## Install EasyMarkdownEditor
 
 Via [npm](https://www.npmjs.com/package/psc-markdowneditor):
 
