@@ -12,7 +12,7 @@ So, from now, I'm going to maintain 2 different repositories:
 - [JavaScript library](https://github.com/erossini/EasyMarkdownEditor)
 - [Markdown Editor for Blazor](https://github.com/erossini/BlazorMarkdownEditor): [try the demo](https://markdown.puresourcecode.com/)
 
-For more information, please visit my blog [PureSourceCode](https://puresourcecode.com/).
+For more information, please visit my blog [PureSourceCode](https://puresourcecode.com/javascript/new-markdowneditor-components-for-javascript-and-blazor/).
 
 A drop-in JavaScript text area replacement for writing beautiful and understandable Markdown.
 EasyMDE allows users who may be less experienced with Markdown to use familiar toolbar buttons and shortcuts.
@@ -48,26 +48,25 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
   - [Contributing](#contributing)
   - [License](#license)
 
-
 ## Install EasyMDE
 
-Via [npm](https://www.npmjs.com/package/easymde):
+Via [npm](https://www.npmjs.com/package/psc-markdowneditor):
 
 ```
-npm install easymde
+npm install psc-markdowneditor
 ```
 
 Via the *UNPKG* CDN:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
-<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/psc-markdowneditor/dist/easymde.min.css">
+<script src="https://unpkg.com/psc-markdowneditor/dist/easymde.min.js"></script>
 ```
 
 Or *jsDelivr*:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
-<script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.css">
+<script src="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.js"></script>
 ```
 
 ## How to use
@@ -560,6 +559,21 @@ You may want to edit this library to adapt its behavior to your needs. This can 
 3. Run `gulp` command, which will generate files: `dist/easymde.min.css` and `dist/easymde.min.js`;
 4. Copy-paste those files to your code base, and you are done.
 
+### Publish the library on npm
+
+If you want to publish the library on [npm](https://www.npmjs.com/package/psc-markdowneditor), you have to login first with this command from the command prompt:
+
+```
+npm login --scope @your-org
+```
+
+Then, publish the JavaScript library with the following command:
+
+```
+npm publish --access public
+```
+
+Remember this upgrade the version number in the `package.json`.
 
 ## Contributing
 

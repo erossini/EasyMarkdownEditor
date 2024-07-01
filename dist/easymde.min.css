@@ -1,5 +1,5 @@
 /**
- * psc-markdowneditor v1.0.2
+ * psc-markdowneditor v1.0.3
  * Copyright Enrico Rossini
  * @link https://github.com/erossini/EasyMarkdownEditor
  * @license MIT
