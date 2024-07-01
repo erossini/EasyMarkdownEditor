@@ -1,7 +1,7 @@
 {
-    "name": "easymde",
-    "version": "2.18.0",
-    "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that easy to use. Features include autosaving and spell checking.",
+    "name": "easyMarkdownEditor",
+    "version": "1.0.0",
+    "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that is easy to use. Features include autosaving and spell checking.",
     "files": [
         "dist/**/*",
         "src/**/*",
@@ -17,7 +17,7 @@
     "main": "src/js/easymde.js",
     "types": "types/easymde.d.ts",
     "license": "MIT",
-    "author": "Jeroen Akkerman",
+    "author": "Enrico Rossini",
     "dependencies": {
         "@types/codemirror": "^5.60.10",
         "@types/marked": "^4.0.7",
@@ -42,7 +42,7 @@
         "vinyl-buffer": "^1.0.1",
         "vinyl-source-stream": "^2.0.0"
     },
-    "repository": "github:Ionaru/easy-markdown-editor",
+    "repository": "github:erossini/EasyMarkdownEditor",
     "scripts": {
         "prepare": "gulp",
         "test": "npm run lint && npm run test:types && npm run e2e",
