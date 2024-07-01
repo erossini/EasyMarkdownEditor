@@ -10,10 +10,10 @@ describe('Upload', () => {
         cy.get('.EasyMDEContainer input[type=file]').selectFile({
             contents: Cypress.Buffer.from('', 'utf-8'),
             fileName: 'test.jpg',
-            mimeType: 'image/jpeg'
+            mimeType: 'image/jpeg',
         }, {
             action: 'drag-drop',
-            force: true
+            force: true,
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('![test.jpg](https://test.com/test.jpg)');
     });
