@@ -15,7 +15,7 @@ var rename = require('gulp-rename');
 var banner = ['/**',
     ' * <%= pkg.name %> v<%= pkg.version %>',
     ' * Copyright <%= pkg.author %>',
-    ' * @link https://github.com/ionaru/easy-markdown-editor',
+    ' * @link https://github.com/erossini/EasyMarkdownEditor',
     ' * @license <%= pkg.license %>',
     ' */',
     ''].join('\n');
