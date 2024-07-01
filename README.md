@@ -1,12 +1,18 @@
 # EasyMDE - Markdown Editor
 
-[![npm version](https://img.shields.io/npm/v/easymde.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde)
-[![npm version](https://img.shields.io/npm/v/easymde/next.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde/v/next)
+![markdown-editor-blazor-logo](https://user-images.githubusercontent.com/9497415/149015375-005eded7-4b4e-4644-b08b-8db24511f0db.jpg)
+
+[![npm version](https://img.shields.io/npm/v/psc-markdowneditor.svg?style=for-the-badge)](https://www.npmjs.com/package/psc-markdowneditor)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ionaru/easy-markdown-editor/cd.yaml?branch=master&style=for-the-badge)](https://github.com/Ionaru/easy-markdown-editor/actions?query=branch%3Amaster)
 
-> This repository is a fork of
-[SimpleMDE, made by Sparksuite](https://github.com/sparksuite/simplemde-markdown-editor/).
-Go to the [dedicated section](#simplemde-fork) for more information.
+I have created the [Markdown Component](https://github.com/erossini/BlazorMarkdownEditor) component for [Blazor WebAssembly](https://www.puresourcecode.com/tag/blazor-webassembly/) and [Blazor Server](https://www.puresourcecode.com/tag/blazor-server/) based on the EasyMarkdownEditor. The repository is not been maintained for a while. For this reason, I decided to start my repository and fix the issues I found in the `JavaScript` code.
+
+So, from now, I'm going to maintain 2 different repositories:
+
+- [JavaScript library](https://github.com/erossini/EasyMarkdownEditor)
+- [Markdown Editor for Blazor](https://github.com/erossini/BlazorMarkdownEditor): [try the demo](https://markdown.puresourcecode.com/)
+
+For more information, please visit my blog [PureSourceCode](https://puresourcecode.com/).
 
 A drop-in JavaScript text area replacement for writing beautiful and understandable Markdown.
 EasyMDE allows users who may be less experienced with Markdown to use familiar toolbar buttons and shortcuts.
@@ -16,10 +22,7 @@ In addition, the syntax is rendered while editing to clearly show the expected r
 EasyMDE also features both built-in auto saving and spell checking.
 The editor is entirely customizable, from theming to toolbar buttons and javascript hooks.
 
-[**Try the demo**](https://stackblitz.com/edit/easymde/)
-
 [![Preview](https://user-images.githubusercontent.com/3472373/51319377-26fe6e00-1a5d-11e9-8cc6-3137a566796d.png)](https://stackblitz.com/edit/easymde/)
-
 
 ## Quick access
 
@@ -106,7 +109,6 @@ Use `easyMDE.value(val)` to set the content of the editor:
 easyMDE.value('New input for **EasyMDE**');
 </script>
 ```
-
 
 ## Configuration
 
@@ -536,6 +538,7 @@ CodeMirror is the backbone of the project and parses much of the Markdown syntax
 I originally made this fork to implement FontAwesome 5 compatibility into SimpleMDE. When that was done I submitted a [pull request](https://github.com/sparksuite/simplemde-markdown-editor/pull/666), which has not been accepted yet. This, and the project being inactive since May 2017, triggered me to make more changes and try to put new life into the project.
 
 Changes include:
+
 * FontAwesome 5 compatibility
 * Guide button works when editor is in preview mode
 * Links are now `https://` by default
@@ -569,3 +572,4 @@ This project is released under the [MIT License](./LICENSE).
 
 - Copyright (c) 2015 Sparksuite, Inc.
 - Copyright (c) 2017 Jeroen Akkerman.
+- Copyright (c) 2024 Enrico Rossini.

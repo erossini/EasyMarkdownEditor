@@ -1,6 +1,6 @@
 {
-    "name": "easymarkdowneditor",
-    "version": "1.0.0",
+    "name": "psc-markdowneditor",
+    "version": "1.0.2",
     "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that is easy to use. Features include autosaving and spell checking.",
     "files": [
         "dist/**/*",
