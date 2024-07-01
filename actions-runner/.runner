@@ -1,9 +1,0 @@
-﻿{
-  "agentId": 2,
-  "agentName": "ENRICOSURFACE",
-  "poolId": 1,
-  "poolName": "Default",
-  "serverUrl": "https://pipelinesghubeus26.actions.githubusercontent.com/fnU0akQBysjrUPKAtstwm5MVB6YwAK1VEBolqrCW2PRd8HaQM5/",
-  "gitHubUrl": "https://github.com/erossini/EasyMarkdownEditor",
-  "workFolder": "_work"
-}
