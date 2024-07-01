@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/easymde.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde)
 [![npm version](https://img.shields.io/npm/v/easymde/next.svg?style=for-the-badge)](https://www.npmjs.com/package/easymde/v/next)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/erossini/EasyMarkdownEditor/cd.yaml?branch=master&style=for-the-badge)](https://github.com/erossini/EasyMarkdownEditor/actions?query=branch%3Amaster)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/erossini/EasyMarkdownEditor/cd.yaml?branch=main&style=for-the-badge)](https://github.com/erossini/EasyMarkdownEditor/actions?query=branch%3Amain)
 
 > This repository is a fork of
 [SimpleMDE, made by Sparksuite](https://github.com/sparksuite/simplemde-markdown-editor/).
