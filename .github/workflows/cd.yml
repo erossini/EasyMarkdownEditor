@@ -82,8 +82,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: JS-DevTools/npm-publish@v1
         with:
-          #token: ${{ secrets.NPM_TOKEN }}
-          token: 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
+          token: ${{ secrets.NPM_TOKEN }}
 
       - name: Update @next version
         if: startsWith(github.ref, 'refs/heads/')
@@ -94,6 +93,5 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           tag: next
-          #token: ${{ secrets.NPM_TOKEN }}
-          token: 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
+          token: ${{ secrets.NPM_TOKEN }}
           check-version: false
