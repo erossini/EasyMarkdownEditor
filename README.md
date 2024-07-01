@@ -1,4 +1,4 @@
-# EasyMDE - Markdown Editor
+# Easy Markdown Editor
 
 ![markdown-editor-blazor-logo](https://user-images.githubusercontent.com/9497415/149015375-005eded7-4b4e-4644-b08b-8db24511f0db.jpg)
 
