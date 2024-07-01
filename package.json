@@ -1,5 +1,5 @@
 {
-    "name": "easyMarkdownEditor",
+    "name": "easymarkdowneditor",
     "version": "1.0.0",
     "description": "A simple, beautiful, and embeddable JavaScript Markdown editor that is easy to use. Features include autosaving and spell checking.",
     "files": [
