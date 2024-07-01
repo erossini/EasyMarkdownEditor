@@ -14,6 +14,8 @@ So, from now, I'm going to maintain 2 different repositories:
 
 For more information, please visit my blog [PureSourceCode](https://puresourcecode.com/javascript/new-markdowneditor-components-for-javascript-and-blazor/).
 
+## What is the Easy Markdown Editor?
+
 A drop-in JavaScript text area replacement for writing beautiful and understandable Markdown.
 EasyMDE allows users who may be less experienced with Markdown to use familiar toolbar buttons and shortcuts.
 
