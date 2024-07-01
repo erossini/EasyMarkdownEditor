@@ -10,8 +10,6 @@ Thank you so much for your interest in contributing to [PureSourceCode](https://
 
 To contribute code to this project you'll need an up-to-date LTS or current version of Node.js and npm. Please find information about the installation on [the official Node.js website](https://nodejs.org/en/download/).
 
-### Workflow
-
 Please make sure any code you submit is compliant and compatible with this repository's [license](./LICENSE).
 
 ## Your first pull request
