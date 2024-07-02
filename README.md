@@ -124,7 +124,6 @@ easyMDE.value('New input for **EasyMDE**');
   - **submit_delay**: Delay before assuming that submit of the form failed and saving the text, in milliseconds. Defaults to `autosave.delay` or `10000` (10 seconds).
   - **uniqueId**: You must set a unique string identifier so that EasyMDE can autosave. Something that separates this from other instances of EasyMDE elsewhere on your website.
   - **timeFormat**: Set DateTimeFormat. More information see [DateTimeFormat instances](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat). Default `locale: en-US, format: hour:minute`.
-  - **text**: Set text for autosave.
 - **autoRefresh**: Useful, when initializing the editor in a hidden DOM node. If set to `{ delay: 300 }`, it will check every 300 ms if the editor is visible and if positive, call CodeMirror's [`refresh()`](https://codemirror.net/doc/manual.html#refresh).
 - **blockStyles**: Customize how certain buttons that style blocks of text behave.
   - **bold**: Can be set to `**` or `__`. Defaults to `**`.
@@ -146,6 +145,7 @@ easyMDE.value('New input for **EasyMDE**');
   - table
 - **lineNumbers**: If set to `true`, enables line numbers in the editor.
 - **lineWrapping**: If set to `false`, disable line wrapping. Defaults to `true`.
+- **markdownUrl**: Customize url for guide.
 - **minHeight**: Sets the minimum height for the composition area, before it starts auto-growing. Should be a string containing a valid CSS value like `"500px"`. Defaults to `"300px"`.
 - **maxHeight**: Sets fixed height for the composition area. `minHeight` option will be ignored. Should be a string containing a valid CSS value like `"500px"`. Defaults to `undefined`.
 - **onToggleFullScreen**: A function that gets called when the editor's full screen mode is toggled. The function will be passed a boolean as parameter, `true` when the editor is currently going into full screen mode, or `false`.
@@ -204,11 +204,13 @@ easyMDE.value('New input for **EasyMDE**');
 - **sideBySideFullscreen**: If set to `false`, allows side-by-side editing without going into fullscreen. Defaults to `true`.
 - **status**: If set to `false`, hide the status bar. Defaults to the array of built-in status bar items.
   - Optionally, you can set an array of status bar items to include, and in what order. You can even define your own custom status bar items.
+- **statusTexts**: Customize the text used to status bar.
 - **styleSelectedText**: If set to `false`, remove the `CodeMirror-selectedtext` class from selected lines. Defaults to `true`.
 - **syncSideBySidePreviewScroll**: If set to `false`, disable syncing scroll in side by side mode. Defaults to `true`.
 - **tabSize**: If set, customize the tab size. Defaults to `2`.
 - **theme**: Override the theme. Defaults to `easymde`.
 - **toolbar**: If set to `false`, hide the toolbar. Defaults to the [array of icons](#toolbar-icons).
+- **toolbarTitles**: Customize the title used to toolbar.
 - **toolbarTips**: If set to `false`, disable toolbar button tips. Defaults to `true`.
 - **toolbarButtonClassPrefix**: Adds a prefix to the toolbar button classes when set. For example, a value of `"mde"` results in `"mde-bold"` for the Bold button.
 - **direction**: `rtl` or `ltr`. Changes text direction to support right-to-left languages. Defaults to `ltr`.
@@ -236,7 +238,6 @@ const editor = new EasyMDE({
                 minute: '2-digit',
             },
         },
-        text: "Autosaved: "
     },
     blockStyles: {
         bold: "__",
@@ -310,12 +311,21 @@ const editor = new EasyMDE({
             el.setAttribute('data-keystrokes', keystrokes);
         },
     }], // Another optional usage, with a custom status bar item that counts keystrokes
+    statusTexts: {
+        characters: "characters: ",
+        lines: "lines: ",
+        words: "words: ",
+        autosave: "Autosaved: ",
+    },
     styleSelectedText: false,
     sideBySideFullscreen: false,
     syncSideBySidePreviewScroll: false,
     tabSize: 4,
     toolbar: false,
     toolbarTips: false,
+    toobarTitles: {
+        "bold": {"title": "Bold"},
+    },
     toolbarButtonClassPrefix: "mde",
 });
 ```

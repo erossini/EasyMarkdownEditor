@@ -1505,138 +1505,138 @@ var iconClassMap = {
 
 var toolbarBuiltInButtons = {
     'bold': {
-        name: 'bold',
+        name: 'mde-tb-bold',
         action: toggleBold,
         className: iconClassMap['bold'],
         title: 'Bold',
         default: true,
     },
     'italic': {
-        name: 'italic',
+        name: 'mde-tb-italic',
         action: toggleItalic,
         className: iconClassMap['italic'],
         title: 'Italic',
         default: true,
     },
     'strikethrough': {
-        name: 'strikethrough',
+        name: 'mde-tb-strikethrough',
         action: toggleStrikethrough,
         className: iconClassMap['strikethrough'],
         title: 'Strikethrough',
     },
     'heading': {
-        name: 'heading',
+        name: 'mde-tb-heading',
         action: toggleHeadingSmaller,
         className: iconClassMap['heading'],
         title: 'Heading',
         default: true,
     },
     'heading-smaller': {
-        name: 'heading-smaller',
+        name: 'mde-tb-heading-smaller',
         action: toggleHeadingSmaller,
         className: iconClassMap['heading-smaller'],
         title: 'Smaller Heading',
     },
     'heading-bigger': {
-        name: 'heading-bigger',
+        name: 'mde-tb-heading-bigger',
         action: toggleHeadingBigger,
         className: iconClassMap['heading-bigger'],
         title: 'Bigger Heading',
     },
     'heading-1': {
-        name: 'heading-1',
+        name: 'mde-tb-heading-1',
         action: toggleHeading1,
         className: iconClassMap['heading-1'],
         title: 'Big Heading',
     },
     'heading-2': {
-        name: 'heading-2',
+        name: 'mde-tb-heading-2',
         action: toggleHeading2,
         className: iconClassMap['heading-2'],
         title: 'Medium Heading',
     },
     'heading-3': {
-        name: 'heading-3',
+        name: 'mde-tb-heading-3',
         action: toggleHeading3,
         className: iconClassMap['heading-3'],
         title: 'Small Heading',
     },
     'separator-1': {
-        name: 'separator-1',
+        name: 'mde-tb-separator-1',
     },
     'code': {
-        name: 'code',
+        name: 'mde-tb-code',
         action: toggleCodeBlock,
         className: iconClassMap['code'],
         title: 'Code',
     },
     'quote': {
-        name: 'quote',
+        name: 'mde-tb-quote',
         action: toggleBlockquote,
         className: iconClassMap['quote'],
         title: 'Quote',
         default: true,
     },
     'unordered-list': {
-        name: 'unordered-list',
+        name: 'mde-tb-unordered-list',
         action: toggleUnorderedList,
         className: iconClassMap['unordered-list'],
         title: 'Generic List',
         default: true,
     },
     'ordered-list': {
-        name: 'ordered-list',
+        name: 'mde-tb-ordered-list',
         action: toggleOrderedList,
         className: iconClassMap['ordered-list'],
         title: 'Numbered List',
         default: true,
     },
     'clean-block': {
-        name: 'clean-block',
+        name: 'mde-tb-clean-block',
         action: cleanBlock,
         className: iconClassMap['clean-block'],
         title: 'Clean block',
     },
     'separator-2': {
-        name: 'separator-2',
+        name: 'mde-tb-separator-2',
     },
     'link': {
-        name: 'link',
+        name: 'mde-tb-link',
         action: drawLink,
         className: iconClassMap['link'],
         title: 'Create Link',
         default: true,
     },
     'image': {
-        name: 'image',
+        name: 'mde-tb-image',
         action: drawImage,
         className: iconClassMap['image'],
         title: 'Insert Image',
         default: true,
     },
     'upload-image': {
-        name: 'upload-image',
+        name: 'mde-tb-upload-image',
         action: drawUploadedImage,
         className: iconClassMap['upload-image'],
         title: 'Import an image',
     },
     'table': {
-        name: 'table',
+        name: 'mde-tb-table',
         action: drawTable,
         className: iconClassMap['table'],
         title: 'Insert Table',
     },
     'horizontal-rule': {
-        name: 'horizontal-rule',
+        name: 'mde-tb-horizontal-rule',
         action: drawHorizontalRule,
         className: iconClassMap['horizontal-rule'],
         title: 'Insert Horizontal Line',
     },
     'separator-3': {
-        name: 'separator-3',
+        name: 'mde-tb-separator-3',
     },
     'preview': {
-        name: 'preview',
+        name: 'mde-tb-preview',
         action: togglePreview,
         className: iconClassMap['preview'],
         noDisable: true,
@@ -1644,7 +1644,7 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'side-by-side': {
-        name: 'side-by-side',
+        name: 'mde-tb-side-by-side',
         action: toggleSideBySide,
         className: iconClassMap['side-by-side'],
         noDisable: true,
@@ -1653,7 +1653,7 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'fullscreen': {
-        name: 'fullscreen',
+        name: 'mde-tb-fullscreen',
         action: toggleFullScreen,
         className: iconClassMap['fullscreen'],
         noDisable: true,
@@ -1662,10 +1662,10 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'separator-4': {
-        name: 'separator-4',
+        name: 'mde-tb-separator-4',
     },
     'guide': {
-        name: 'guide',
+        name: 'mde-tb-guide',
         action: 'https://www.markdownguide.org/basic-syntax/',
         className: iconClassMap['guide'],
         noDisable: true,
@@ -1673,34 +1673,34 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'separator-5': {
-        name: 'separator-5',
+        name: 'mde-tb-separator-5',
     },
     'undo': {
-        name: 'undo',
+        name: 'mde-tb-undo',
         action: undo,
         className: iconClassMap['undo'],
         noDisable: true,
         title: 'Undo',
     },
     'redo': {
-        name: 'redo',
+        name: 'mde-tb-redo',
         action: redo,
         className: iconClassMap['redo'],
         noDisable: true,
         title: 'Redo',
     },
     'separator-6': {
-        name: 'separator-6',
+        name: 'mde-tb-separator-6',
     },
     'indent': {
-        name: 'indent',
+        name: 'mde-tb-indent',
         action: indent,
         className: iconClassMap['indent'],
         noDisable: true,
         title: 'Indent',
     },
     'outdent': {
-        name: 'outdent',
+        name: 'mde-tb-outdent',
         action: outdent,
         className: iconClassMap['outdent'],
         noDisable: true,
@@ -1720,6 +1720,13 @@ var insertTexts = {
 var promptTexts = {
     link: 'URL for the link:',
     image: 'URL of the image:',
+};
+
+var statusTexts = {
+    characters: 'characters: ',
+    lines: 'lines: ',
+    words: 'words: ',
+    autosave: 'Autosaved: ',
 };
 
 var timeFormat = {
@@ -1797,6 +1804,9 @@ function EasyMDE(options) {
         document.getElementsByTagName('head')[0].appendChild(link);
     }
 
+    if (options.markdownUrl != undefined) {
+        toolbarBuiltInButtons.guide.action = options.markdownUrl;
+    }
 
     // Find the textarea to use
     if (options.element) {
@@ -1835,7 +1845,7 @@ function EasyMDE(options) {
 
     // Handle status bar
     if (!Object.prototype.hasOwnProperty.call(options, 'status')) {
-        options.status = ['autosave', 'lines', 'words', 'cursor'];
+        options.status = ['autosave', 'lines', 'words', 'characters', 'cursor'];
 
         if (options.uploadImage) {
             options.status.unshift('upload-image');
@@ -1865,6 +1875,8 @@ function EasyMDE(options) {
     // Merging the promptTexts, with the given options
     options.promptTexts = extend({}, promptTexts, options.promptTexts || {});
 
+    // Merging the statusTexts, with the given options
+    options.statusTexts = extend({}, statusTexts, options.statusTexts || {});
 
     // Merging the blockStyles, with the given options
     options.blockStyles = extend({}, blockStyles, options.blockStyles || {});
@@ -1873,9 +1885,17 @@ function EasyMDE(options) {
     if (options.autosave != undefined) {
         // Merging the Autosave timeFormat, with the given options
         options.autosave.timeFormat = extend({}, timeFormat, options.autosave.timeFormat || {});
+
+        // Merging the Autosave text, with the given options and saving to statusTexts
+        if (options.autosave.text != undefined) {
+            options.statusTexts.autosave = options.autosave.text;
+        }
     }
 
     options.iconClassMap = extend({}, iconClassMap, options.iconClassMap || {});
+    
+    // Merging the toolbar title, with the given options
+    toolbarBuiltInButtons = extend({}, toolbarBuiltInButtons, options.toolbarTitles || {});
 
     // Merging the shortcuts, with the given options
     options.shortcuts = extend({}, shortcuts, options.shortcuts || {});
@@ -2401,7 +2421,7 @@ EasyMDE.prototype.autosave = function () {
         if (el != null && el != undefined && el != '') {
             var d = new Date();
             var dd = new Intl.DateTimeFormat([this.options.autosave.timeFormat.locale, 'en-US'], this.options.autosave.timeFormat.format).format(d);
-            var save = this.options.autosave.text == undefined ? 'Autosaved: ' : this.options.autosave.text;
+            var save = this.options.statusTexts.autosave;
 
             el.innerHTML = save + dd;
         }
@@ -2663,7 +2683,14 @@ EasyMDE.prototype.createToolbar = function (items) {
     var i;
     for (i = 0; i < items.length; i++) {
         if (toolbarBuiltInButtons[items[i]] != undefined) {
-            items[i] = toolbarBuiltInButtons[items[i]];
+            var button = toolbarBuiltInButtons[items[i]];
+
+            if (button.className === undefined
+                && this.options.iconClassMap[items[i]] !== undefined) {
+                button.className = this.options.iconClassMap[items[i]];
+            }
+
+            items[i] = button;
         }
     }
 
@@ -2772,19 +2799,20 @@ EasyMDE.prototype.createStatusbar = function (status) {
 
     // Set up the built-in items
     var items = [];
-    var i, onUpdate, onActivity, defaultValue;
+    var i, onUpdate, onActivity, defaultValue, dataSet;
 
     for (i = 0; i < status.length; i++) {
         // Reset some values
         onUpdate = undefined;
         onActivity = undefined;
         defaultValue = undefined;
-
+        dataSet = undefined;
 
         // Handle if custom or not
         if (typeof status[i] === 'object') {
             items.push({
                 className: status[i].className,
+                dataSet: status[i].dataSet,
                 defaultValue: status[i].defaultValue,
                 onUpdate: status[i].onUpdate,
                 onActivity: status[i].onActivity,
@@ -2792,7 +2820,16 @@ EasyMDE.prototype.createStatusbar = function (status) {
         } else {
             var name = status[i];
 
-            if (name === 'words') {
+            if (name === 'characters') {
+                dataSet = options.statusTexts[name];
+                defaultValue = function (el) {
+                    el.innerHTML = cm.getValue().length;
+                };
+                onUpdate = function (el) {
+                    el.innerHTML = cm.getValue().length;
+                };
+            } else if (name === 'words') {
+                dataSet = options.statusTexts[name];
                 defaultValue = function (el) {
                     el.innerHTML = wordCount(cm.getValue());
                 };
@@ -2800,6 +2837,7 @@ EasyMDE.prototype.createStatusbar = function (status) {
                     el.innerHTML = wordCount(cm.getValue());
                 };
             } else if (name === 'lines') {
+                dataSet = options.statusTexts[name];
                 defaultValue = function (el) {
                     el.innerHTML = cm.lineCount();
                 };
@@ -2812,9 +2850,7 @@ EasyMDE.prototype.createStatusbar = function (status) {
                 };
                 onActivity = function (el) {
                     var pos = cm.getCursor();
-                    var posLine = pos.line + 1;
-                    var posColumn = pos.ch + 1;
-                    el.innerHTML = posLine + ':' + posColumn;
+                    el.innerHTML = pos.line + ':' + pos.ch;
                 };
             } else if (name === 'autosave') {
                 defaultValue = function (el) {
@@ -2830,6 +2866,7 @@ EasyMDE.prototype.createStatusbar = function (status) {
 
             items.push({
                 className: name,
+                dataSet: dataSet,
                 defaultValue: defaultValue,
                 onUpdate: onUpdate,
                 onActivity: onActivity,
@@ -2853,6 +2890,9 @@ EasyMDE.prototype.createStatusbar = function (status) {
         var el = document.createElement('span');
         el.className = item.className;
 
+        if (item.dataSet != undefined) {
+            el.dataset.statusBarBefore = item.dataSet;
+        }
 
         // Ensure the defaultValue is a function
         if (typeof item.defaultValue === 'function') {
@@ -2878,6 +2918,15 @@ EasyMDE.prototype.createStatusbar = function (status) {
             }(el, item)));
         }
 
+        // Ensure the onActivity is a function
+        if (typeof item.onActivity === 'function') {
+            // Create a closure around the span of the current action, then execute the onActivity handler
+            this.codemirror.on('cursorActivity', (function (el, item) {
+                    return function () {
+                        item.onActivity(el);
+                    };
+            }(el, item)));
+        }
 
         // Append the item to the status bar
         bar.appendChild(el);

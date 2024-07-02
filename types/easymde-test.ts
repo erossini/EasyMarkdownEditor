@@ -66,7 +66,7 @@ const editor2 = new EasyMDE({
         '|',
         {
             name: 'link',
-            action: 'https://github.com/Ionaru/easy-markdown-editor',
+            action: 'https://github.com/erossini/EasyMarkdownEditor',
             className: 'fa fab fa-github',
             title: 'A Custom Link',
             noDisable: true,
@@ -80,8 +80,9 @@ const editor2 = new EasyMDE({
             children: [
                 {
                     name: 'link',
-                    action: 'https://github.com/Ionaru/easy-markdown-editor',
+                    action: 'https://github.com/erossini/EasyMarkdownEditor',
                     className: 'fa fab fa-github',
+                    text: 'A Custom Link',
                     title: 'A Custom Link',
                     noDisable: true,
                     noMobile: true,

@@ -14,7 +14,12 @@
     <textarea></textarea>
     <script>
         const easyMDE = new EasyMDE({
-            toolbar: ["bold", "italic", "heading", "|", "quote", "|", "indent", "outdent", "|", "table"]
+            toolbar: ["bold", "italic", "heading", "|", "quote", "|", "indent", "outdent", "|", "table", "|", "preview", "guide"],
+            markdownUrl: 'https://github.com/erossini/EasyMarkdownEditor',
+            statusText: 'This is the status text',
+            statusTexts: {
+                characters: 'chars: '
+            }
         });
     </script>
 </body>
