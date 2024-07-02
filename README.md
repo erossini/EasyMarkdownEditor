@@ -68,8 +68,10 @@ Via the *UNPKG* CDN:
 
 Or *jsDelivr*:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.css">
-<script src="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.js"></script>
+<link rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.css">
+<script src="https://cdn.jsdelivr.net/gh/erossini/EasyMarkdownEditor@main/dist/easymde.min.js">
+</script>
 ```
 
 ## How to use
@@ -253,7 +255,8 @@ const editor = new EasyMDE({
         horizontalRule: ["", "\n\n-----\n\n"],
         image: ["![](http://", ")"],
         link: ["[", "](https://)"],
-        table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"],
+        table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n" + 
+                "| Text     | Text      | Text     |\n\n"],
     },
     lineWrapping: false,
     minHeight: "500px",
@@ -267,7 +270,8 @@ const editor = new EasyMDE({
     previewClass: "my-custom-styling",
     previewClass: ["my-custom-styling", "more-custom-styling"],
 
-    previewRender: (plainText) => customMarkdownParser(plainText), // Returns HTML from a custom parser
+    // Returns HTML from a custom parser
+    previewRender: (plainText) => customMarkdownParser(plainText),
     previewRender: (plainText, preview) => { // Async method
         setTimeout(() => {
             preview.innerHTML = customMarkdownParser(plainText);
@@ -401,7 +405,9 @@ const easyMDE = new EasyMDE({
             title: "Custom Button",
             attributes: { // for custom attributes
                 id: "custom-id",
-                "data-value": "custom value" // HTML5 data-* attributes need to be enclosed in quotation marks ("") because of the dash (-) in its name.
+                // HTML5 data-* attributes need to be enclosed in quotation marks ("") 
+                // because of the dash (-) in its name.
+                "data-value": "custom value"
             }
         },
         "|" // Separator
@@ -483,9 +489,12 @@ Here is how you can change a few, while leaving others untouched:
 ```js
 const editor = new EasyMDE({
     shortcuts: {
-        "toggleOrderedList": "Ctrl-Alt-K", // alter the shortcut for toggleOrderedList
-        "toggleCodeBlock": null, // unbind Ctrl-Alt-C
-        "drawTable": "Cmd-Alt-T", // bind Cmd-Alt-T to drawTable action, which doesn't come with a default shortcut
+        // alter the shortcut for toggleOrderedList
+        "toggleOrderedList": "Ctrl-Alt-K", 
+        // unbind Ctrl-Alt-C
+        "toggleCodeBlock": null, 
+        // bind Cmd-Alt-T to drawTable action, which doesn't come with a default shortcut
+        "drawTable": "Cmd-Alt-T",
     }
 });
 ```
