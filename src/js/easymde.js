@@ -47,6 +47,11 @@ var bindings = {
     'toggleFullScreen': toggleFullScreen,
     'indent': indent,
     'outdent': outdent,
+    'drawAttention': drawAttention,
+    'drawNote': drawNote,
+    'drawTip': drawTip,
+    'drawWarning': drawWarning,
+    'drawVideo': drawVideo,
 };
 
 var shortcuts = {
@@ -875,6 +880,60 @@ function drawImage(editor) {
 }
 
 /**
+ * Wrap the current selection (or empty block) in a fenced code block
+ * using the given language tag. Used by the callout/video actions below.
+ * @param {EasyMDE} editor
+ * @param {string} lang
+ */
+function _drawFencedBlock(editor, lang) {
+    var cm = editor.codemirror;
+    var selectedText = cm.getSelection();
+    cm.replaceSelection('```' + lang + '\n' + (selectedText || '') + '\n```');
+    cm.focus();
+}
+
+function drawAttention(editor) { _drawFencedBlock(editor, 'att'); }
+function drawNote(editor) { _drawFencedBlock(editor, 'note'); }
+function drawTip(editor) { _drawFencedBlock(editor, 'tip'); }
+function drawWarning(editor) { _drawFencedBlock(editor, 'warn'); }
+function drawVideo(editor) { _drawFencedBlock(editor, 'video'); }
+
+/**
+ * Render a callout alert block. Shared by att / note / tip / warn.
+ * @param {'att'|'note'|'tip'|'warn'} kind
+ * @param {string} code
+ */
+function _renderCallout(kind, code) {
+    var map = {
+        att:  { cls: 'attention', icon: 'icon-attention', title: 'Attention' },
+        note: { cls: 'note',      icon: 'icon-note',      title: 'Note' },
+        tip:  { cls: 'tip',       icon: 'icon-tip',       title: 'Tip' },
+        warn: { cls: 'warning',   icon: 'icon-warning',   title: 'Warning' },
+    };
+    var m = map[kind];
+    return '<div class="me-alert callout ' + m.cls + '"><p class="title">' +
+        '<span class="me-icon ' + m.icon + '"></span> ' + m.title + '</p><p>' +
+        code + '</p></div>';
+}
+
+/**
+ * Render a responsive video embed for YouTube, Vimeo, or a direct URL.
+ * @param {string} url
+ */
+function _renderVideo(url) {
+    var trimmed = (url || '').trim();
+    var inner;
+    if (trimmed.indexOf('youtube.com') !== -1 || trimmed.indexOf('youtu.be') !== -1) {
+        inner = '<iframe width="560" height="315" src="' + trimmed + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    } else if (trimmed.indexOf('vimeo.com') !== -1) {
+        inner = '<iframe src="' + trimmed + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    } else {
+        inner = '<video controls><source src="' + trimmed + '" type="video/mp4"></video>';
+    }
+    return '<div class="video-container">' + inner + '</div>';
+}
+
+/**
  * Encode and escape URLs to prevent breaking up rendered Markdown links.
  * @param {string} url The url of the link or image
  */
@@ -1522,6 +1581,11 @@ var iconClassMap = {
     'redo': 'fa fa-repeat fa-redo',
     'indent': 'fa fa-indent',
     'outdent': 'fa fa-outdent',
+    'attention': 'fa fa-exclamation-circle',
+    'note': 'fa fa-info-circle',
+    'tip': 'fa fa-lightbulb-o fa-lightbulb',
+    'warning': 'fa fa-exclamation-triangle',
+    'video': 'fa fa-video-camera fa-video',
 };
 
 var toolbarBuiltInButtons = {
@@ -1726,6 +1790,36 @@ var toolbarBuiltInButtons = {
         className: iconClassMap['outdent'],
         noDisable: true,
         title: 'Outdent',
+    },
+    'attention': {
+        name: 'attention',
+        action: drawAttention,
+        className: iconClassMap['attention'],
+        title: 'Attention callout',
+    },
+    'note': {
+        name: 'note',
+        action: drawNote,
+        className: iconClassMap['note'],
+        title: 'Note callout',
+    },
+    'tip': {
+        name: 'tip',
+        action: drawTip,
+        className: iconClassMap['tip'],
+        title: 'Tip callout',
+    },
+    'warning': {
+        name: 'warning',
+        action: drawWarning,
+        className: iconClassMap['warning'],
+        title: 'Warning callout',
+    },
+    'video': {
+        name: 'video',
+        action: drawVideo,
+        className: iconClassMap['video'],
+        title: 'Insert Video',
     },
 };
 
@@ -2123,6 +2217,35 @@ EasyMDE.prototype.markdown = function (text) {
                 };
             }
         }
+
+        // Intercept the `att`, `note`, `tip`, `warn`, and `video` fenced
+        // languages. We override renderer.code (not highlight) so the
+        // callout / video markup replaces the entire <pre><code> wrapper
+        // — otherwise .editor-preview pre's grey background would frame
+        // the callout. We also short-circuit highlight for these langs so
+        // an active hljs doesn't mangle the raw content first.
+        var _customLangs = { att: 1, note: 1, tip: 1, warn: 1, video: 1 };
+        var userHighlight = markedOptions.highlight;
+        if (typeof userHighlight === 'function') {
+            markedOptions.highlight = function (code, language) {
+                if (_customLangs[language]) return code;
+                return userHighlight(code, language);
+            };
+        }
+        var baseRenderer = new marked.Renderer();
+        var userRenderer = markedOptions.renderer;
+        markedOptions.renderer = new marked.Renderer();
+        markedOptions.renderer.code = function (code, infostring, escaped) {
+            var lang = (infostring || '').match(/\S*/)[0];
+            if (lang === 'att' || lang === 'note' || lang === 'tip' || lang === 'warn') {
+                return _renderCallout(lang, code);
+            }
+            if (lang === 'video') {
+                return _renderVideo(code);
+            }
+            var fallback = userRenderer && typeof userRenderer.code === 'function' ? userRenderer.code : baseRenderer.code;
+            return fallback.call(this, code, infostring, escaped);
+        };
 
         // Set options
         marked.setOptions(markedOptions);

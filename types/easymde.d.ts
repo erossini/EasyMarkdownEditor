@@ -54,7 +54,12 @@ type ToolbarButton =
     | 'fullscreen'
     | 'guide'
     | 'indent'
-    | 'outdent';
+    | 'outdent'
+    | 'attention'
+    | 'note'
+    | 'tip'
+    | 'warning'
+    | 'video';
 
 declare namespace EasyMDE {
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example / Alerts &amp; Video</title>
+    <link rel="stylesheet" href="../dist/easymde.min.css">
+    <script src="../dist/easymde.min.js"></script>
+    <style>
+        body { font-family: -apple-system, Segoe UI, Helvetica, Arial, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { font-size: 1.25rem; }
+        p.hint { color: #555; }
+    </style>
+</head>
+
+<body>
+    <h1>EasyMDE — alerts &amp; video</h1>
+    <p class="hint">
+        Use the toolbar buttons (Attention / Note / Tip / Warning / Video) or type the
+        fenced blocks below and switch to preview (Ctrl+P).
+    </p>
+    <textarea id="editor"></textarea>
+
+    <script>
+        const sample = [
+            '# Alerts & Video demo',
+            '',
+            '```att',
+            'Something requires your attention.',
+            '```',
+            '',
+            '```note',
+            'This is a note.',
+            '```',
+            '',
+            '```tip',
+            'Pro tip: try the toolbar buttons too.',
+            '```',
+            '',
+            '```warn',
+            'Be careful here.',
+            '```',
+            '',
+            '```video',
+            'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            '```',
+            '',
+        ].join('\n');
+
+        new EasyMDE({
+            element: document.getElementById('editor'),
+            initialValue: sample,
+            toolbar: [
+                'bold', 'italic', 'heading', '|',
+                'quote', 'unordered-list', 'ordered-list', '|',
+                'link', 'image', 'table', '|',
+                'attention', 'note', 'tip', 'warning', 'video', '|',
+                'preview', 'side-by-side', 'fullscreen', '|', 'guide',
+            ],
+        });
+    </script>
+</body>
+
+</html>

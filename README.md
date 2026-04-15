@@ -41,6 +41,7 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
     - [Options list](#options-list)
     - [Options example](#options-example)
     - [Toolbar icons](#toolbar-icons)
+    - [Alerts and video embeds](#alerts-and-video-embeds)
     - [Toolbar customization](#toolbar-customization)
     - [Keyboard shortcuts](#keyboard-shortcuts)
   - [Advanced use](#advanced-use)
@@ -400,6 +401,35 @@ undo | undo | Undo<br>fa fa-undo
 redo | redo | Redo<br>fa fa-redo
 indent | indent | Indent<br>fa fa-indent
 outdent | outdent | Outdent<br>fa fa-outdent
+attention | drawAttention | Attention callout<br>fa fa-exclamation-circle
+note | drawNote | Note callout<br>fa fa-info-circle
+tip | drawTip | Tip callout<br>fa fa-lightbulb
+warning | drawWarning | Warning callout<br>fa fa-exclamation-triangle
+video | drawVideo | Insert Video<br>fa fa-video
+
+### Alerts and video embeds
+
+Five extra fenced-code languages are rendered as rich blocks in the preview:
+
+- ` ```att ` → red **Attention** callout
+- ` ```note ` → blue **Note** callout
+- ` ```tip ` → green **Tip** callout
+- ` ```warn ` → amber **Warning** callout
+- ` ```video ` → responsive embed; recognises YouTube and Vimeo URLs, otherwise falls back to an HTML5 `<video>` element with the URL as the source
+
+Each has a matching toolbar button (`attention`, `note`, `tip`, `warning`, `video`) that wraps the current selection in the right fence. The styling lives in `src/css/alert.css` and `src/css/video.css` and is bundled into `dist/easymde.min.css`. See `example/index_alerts_video.html` for a working demo.
+
+Example markdown:
+
+````markdown
+```note
+This ships in the next release.
+```
+
+```video
+https://www.youtube.com/embed/dQw4w9WgXcQ
+```
+````
 
 ### Toolbar customization
 
