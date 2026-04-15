@@ -48,6 +48,7 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
     - [Removing EasyMDE from text area](#removing-easymde-from-text-area)
     - [Useful methods](#useful-methods)
   - [How it works](#how-it-works)
+  - [Build from source](#build-from-source)
   - [Hacking EasyMDE](#hacking-easymde)
     - [Publish the library on npm](#publish-the-library-on-npm)
   - [Contributing](#contributing)
@@ -559,6 +560,44 @@ EasyMDE is a continuation of SimpleMDE.
 SimpleMDE began as an improvement of [lepture's Editor project](https://github.com/lepture/editor), but has now taken on an identity of its own. It is bundled with [CodeMirror](https://github.com/codemirror/codemirror) and depends on [Font Awesome](http://fontawesome.io).
 
 CodeMirror is the backbone of the project and parses much of the Markdown syntax as it's being written. This allows us to add styles to the Markdown that's being written. Additionally, a toolbar and status bar have been added to the top and bottom, respectively. Previews are rendered by [Marked](https://github.com/chjj/marked) using GitHub Flavored Markdown (GFM).
+
+## Build from source
+
+The files under `dist/` (`easymde.min.js` and `easymde.min.css`) are generated artifacts. If you change anything under `src/`, you need to recompile to regenerate them.
+
+**Prerequisites:** [Node.js](https://nodejs.org/) and npm. Install the project dependencies once:
+
+```
+npm install
+```
+
+**Full build** — lints `src/js/**/*.js`, bundles the JavaScript with Browserify, minifies it with Terser, concatenates the CSS, and writes `dist/easymde.min.js` and `dist/easymde.min.css`:
+
+```
+npm run prepare
+```
+
+(You can also invoke the build task directly with `gulp` or `npx gulp`.)
+
+**Watch mode** — rebuild automatically on every change to `src/js/**/*.js` or the CSS sources:
+
+```
+npx gulp watch
+```
+
+**Lint only** (no build):
+
+```
+npm run lint
+```
+
+**Run the test suite** — lint + TypeScript type-check of `types/easymde.d.ts` + Cypress end-to-end tests (this also rebuilds `dist/` as part of `npm run e2e`):
+
+```
+npm test
+```
+
+After compiling, reload any page that uses the library (for example `example/index.html` or the files under `cypress/e2e/*/index.html`) to see your changes, since those pages load `dist/easymde.min.js` directly.
 
 ## Hacking EasyMDE
 
