@@ -4,6 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/psc-markdowneditor.svg?style=for-the-badge)](https://www.npmjs.com/package/psc-markdowneditor)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ionaru/easy-markdown-editor/cd.yaml?branch=master&style=for-the-badge)](https://github.com/Ionaru/easy-markdown-editor/actions?query=branch%3Amaster)
+[![Donate](https://img.shields.io/badge/donate-Enrico%3A%20Support%20My%20Work%20%E2%9D%A4%EF%B8%8F-ec4899?style=flat-square&logo=github-sponsors&logoColor=white)](https://flnk.it/github-appreciation?src=github)
 
 I have created the [Markdown Component](https://github.com/erossini/BlazorMarkdownEditor) component for [Blazor WebAssembly](https://www.puresourcecode.com/tag/blazor-webassembly/) and [Blazor Server](https://www.puresourcecode.com/tag/blazor-server/) based on the EasyMarkdownEditor. The repository is not been maintained for a while. For this reason, I decided to start my repository and fix the issues I found in the `JavaScript` code.
 
@@ -29,9 +30,10 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
 
 ## Table of content
 
-- [Easy Markdown Editor](#easymde---markdown-editor)
-  - [Quick access](#quick-access)
-  - [Install EasyMDE](#install-easymde)
+- [Easy Markdown Editor](#easy-markdown-editor)
+  - [What is the Easy Markdown Editor?](#what-is-the-easy-markdown-editor)
+  - [Table of content](#table-of-content)
+  - [Install EasyMarkdownEditor](#install-easymarkdowneditor)
   - [How to use](#how-to-use)
     - [Loading the editor](#loading-the-editor)
     - [Editor functions](#editor-functions)
@@ -46,10 +48,15 @@ The editor is entirely customizable, from theming to toolbar buttons and javascr
     - [Removing EasyMDE from text area](#removing-easymde-from-text-area)
     - [Useful methods](#useful-methods)
   - [How it works](#how-it-works)
-  - [SimpleMDE fork](#simplemde-fork)
   - [Hacking EasyMDE](#hacking-easymde)
+    - [Publish the library on npm](#publish-the-library-on-npm)
   - [Contributing](#contributing)
-  - [License](#license)
+  - [👋 About the author \& more from me](#-about-the-author--more-from-me)
+    - [📝 My blog — PureSourceCode.com](#-my-blog--puresourcecodecom)
+    - [🚀 FastLinkIt (flnk.it) — My SaaS platform](#-fastlinkit-flnkit--my-saas-platform)
+    - [💼 Sell your code on FastLinkIt](#-sell-your-code-on-fastlinkit)
+    - [🌍 LanguageInUse.com — Language learning, reinvented](#-languageinusecom--language-learning-reinvented)
+    - [🤝 Support this work](#-support-this-work)
 
 ## Install EasyMarkdownEditor
 
@@ -582,11 +589,30 @@ Remember this upgrade the version number in the `package.json`.
 
 Want to contribute to EasyMDE? Thank you! We have a [contribution guide](./CONTRIBUTING.md) just for you!
 
+---
 
-## License
+## 👋 About the author & more from me
 
-This project is released under the [MIT License](./LICENSE).
+This library is built and maintained by **[Enrico Rossini](https://flnk.it/enrico)** — .NET architect, Blazor advocate, and indie maker.
 
-- Copyright (c) 2015 Sparksuite, Inc.
-- Copyright (c) 2017 Jeroen Akkerman.
-- Copyright (c) 2024 Enrico Rossini.
+If this project helped you, here are a few more things from me you might like:
+
+### 📝 My blog — [PureSourceCode.com](https://www.puresourcecode.com)
+Deep-dives on Blazor, .NET, JavaScript frameworks, DevOps, and real-world engineering problems. 10+ years of articles, demos, and open-source components.
+
+### 🚀 [FastLinkIt (flnk.it)](https://flnk.it) — My SaaS platform
+A full-stack platform for link shortening, QR codes, link-in-bio pages, contact management, email campaigns, event booking, payments & donations, service requests, AI doc chat, and more. Free tier available, no credit card required.
+
+### 💼 Sell your code on FastLinkIt
+Got a library, NuGet package, template, or digital product? Sell it through **[flnk.it/features/sell-code](https://flnk.it/features/sell-code)** — private NuGet feed for buyers, one-command install, Stripe Connect payouts, licence keys, no monthly fees. You keep the money, I keep the platform running.
+
+### 🌍 [LanguageInUse.com](https://languageinuse.com) — Language learning, reinvented
+My other project: an app for learning languages through real-world usage patterns instead of textbooks. [Visit](https://languageinuse.com) and give it a try and search the apps in your app store.
+
+### 🤝 Support this work
+- ⭐ Star this repo on GitHub
+- 🐛 [Open an issue](../../issues) for bugs or feature requests
+- 💬 Follow me on [LinkedIn](https://www.linkedin.com/in/erossini/)
+- ☕ [Donate](https://flnk.it/github-appreciation?src=github) (optional)
+
+Thanks for using this project. 🙏
