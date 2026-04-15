@@ -11,8 +11,8 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             const stub = cy.stub($win, 'prompt');
-            cy.get('button.link').click();
-            cy.get('button.link').then(() => {
+            cy.get('button.mde-link').click();
+            cy.get('button.mde-link').then(() => {
                 expect(stub).to.be.calledWith('URL for the link:', 'https://');
             });
         });
@@ -24,8 +24,8 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             const stub = cy.stub($win, 'prompt');
-            cy.get('button.image').click();
-            cy.get('button.image').then(() => {
+            cy.get('button.mde-image').click();
+            cy.get('button.mde-image').then(() => {
                 expect(stub).to.be.calledWith('URL of the image:', 'https://');
             });
         });
@@ -37,7 +37,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -54,8 +54,8 @@ describe('URL prompts', () => {
         cy.window().then(($win) => {
             const stub = cy.stub($win, 'prompt');
             stub.returns('https://example.com');
-            cy.get('button.link').click();
-            cy.get('button.link').then(() => {
+            cy.get('button.mde-link').click();
+            cy.get('button.mde-link').then(() => {
                 expect(stub).to.be.calledWith('URL for the link:', 'https://');
                 stub.restore();
             });
@@ -66,8 +66,8 @@ describe('URL prompts', () => {
         cy.window().then(($win) => {
             const stub = cy.stub($win, 'prompt');
             stub.returns('https://example.eu');
-            cy.get('button.link').click();
-            cy.get('button.link').then(() => {
+            cy.get('button.mde-link').click();
+            cy.get('button.mde-link').then(() => {
                 expect(stub).to.be.calledWith('URL for the link:', 'https://');
                 stub.restore();
             });
@@ -92,7 +92,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=param&moo=cow');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=param&moo=cow)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -108,7 +108,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=[]param');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=%5B%5Dparam)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -124,7 +124,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=(param)');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=\\(param\\))');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -140,7 +140,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=(param1,param2)&more=(param3,param4)&end=true');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=\\(param1,param2\\)&more=\\(param3,param4\\)&end=true)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -156,7 +156,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=(param');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=\\(param)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -172,7 +172,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=)param');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=\\)param)');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -188,7 +188,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=<param');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=%3Cparam');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');
@@ -204,7 +204,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=👷‍♂️');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=%F0%9F%91%B7%E2%80%8D%E2%99%82%EF%B8%8F');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a 👌 website!');
@@ -220,7 +220,7 @@ describe('URL prompts', () => {
 
         cy.window().then(($win) => {
             cy.stub($win, 'prompt').returns('https://example.com?some=very special param');
-            cy.get('button.link').click();
+            cy.get('button.mde-link').click();
         });
         cy.get('.EasyMDEContainer .CodeMirror').contains('[](https://example.com?some=very%20special%20param');
         cy.get('.EasyMDEContainer .CodeMirror').type('{home}{rightarrow}Link to a website!');

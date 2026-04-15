@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example / Resizable editor</title>
+    <link rel="stylesheet" href="../dist/easymde.min.css">
+    <script src="../dist/easymde.min.js"></script>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { margin-bottom: 0.25rem; }
+        p { color: #555; margin-top: 0; }
+        .demo { margin-bottom: 2.5rem; }
+        label { display: inline-block; font-weight: 600; margin-bottom: 0.5rem; }
+    </style>
+</head>
+
+<body>
+    <h1>Resizable editor examples</h1>
+    <p>
+        Drag the small handle in the bottom-right corner of each editor's text area
+        to resize it. The <code>resize</code> option controls which directions are
+        allowed.
+    </p>
+
+    <div class="demo">
+        <label for="ta-vertical">resize: "vertical" (most common)</label>
+        <textarea id="ta-vertical"># Vertical resize
+
+Drag the handle downward to make the editor taller, or upward to shrink it.
+The horizontal size stays locked to the container.</textarea>
+    </div>
+
+    <div class="demo">
+        <label for="ta-horizontal">resize: "horizontal"</label>
+        <textarea id="ta-horizontal"># Horizontal resize
+
+Only the width changes when you drag the handle.</textarea>
+    </div>
+
+    <div class="demo">
+        <label for="ta-both">resize: "both"</label>
+        <textarea id="ta-both"># Resize in any direction
+
+You can grow or shrink this editor in both dimensions.</textarea>
+    </div>
+
+    <script>
+        new EasyMDE({
+            element: document.getElementById('ta-vertical'),
+            resize: 'vertical',
+            maxHeight: '200px',
+        });
+
+        new EasyMDE({
+            element: document.getElementById('ta-horizontal'),
+            resize: 'horizontal',
+            maxHeight: '200px',
+        });
+
+        new EasyMDE({
+            element: document.getElementById('ta-both'),
+            resize: 'both',
+            maxHeight: '200px',
+        });
+    </script>
+</body>
+
+</html>

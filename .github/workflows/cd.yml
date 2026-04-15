@@ -80,7 +80,7 @@ jobs:
 
       - name: Deploy @latest version to npm
         if: startsWith(github.ref, 'refs/tags/')
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
 
@@ -90,8 +90,8 @@ jobs:
 
       - name: Deploy @next version to npm
         if: startsWith(github.ref, 'refs/heads/')
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v3
         with:
           tag: next
           token: ${{ secrets.NPM_TOKEN }}
-          check-version: false
+          strategy: all

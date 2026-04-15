@@ -195,7 +195,12 @@ function createToolbarButton(options, enableActions, enableTooltips, shortcuts, 
         }
     }
 
-    var classNamePrefix = parent.options.toolbarButtonClassPrefix ? parent.options.toolbarButtonClassPrefix + '-' : '';
+    // Default to "mde-" so toolbar button classes (e.g. "mde-table") don't collide
+    // with host-page CSS frameworks like Bootstrap (which defines .table, .image, etc.).
+    // Pass an empty string to opt out of any prefix.
+    var rawPrefix = parent.options.toolbarButtonClassPrefix;
+    if (rawPrefix === undefined || rawPrefix === null) rawPrefix = 'mde';
+    var classNamePrefix = rawPrefix ? rawPrefix + '-' : '';
     el.className = classNamePrefix + options.name;
     el.setAttribute('type', markup);
     enableTooltips = (enableTooltips == undefined) ? true : enableTooltips;
@@ -2262,6 +2267,86 @@ EasyMDE.prototype.render = function (el) {
     if (options.status !== false) {
         this.gui.statusbar = this.createStatusbar();
     }
+
+    if (options.resize) {
+        var resizeValue = options.resize === true ? 'vertical' : options.resize;
+        var resizesWidth = resizeValue === 'horizontal' || resizeValue === 'both';
+        var resizeWrapper = this.codemirror.getWrapperElement();
+        var resizeScroller = this.codemirror.getScrollerElement();
+
+        // Attach the drag handle to the outer container so horizontal/both
+        // resizes also grow the toolbar and status bar (not just the editor).
+        // The container already has `overflow: hidden` via our CSS, which is
+        // a prerequisite for the `resize` property to take effect.
+        easyMDEContainer.style.resize = resizeValue;
+        easyMDEContainer.style.overflow = 'hidden';
+        easyMDEContainer.style.boxSizing = 'border-box';
+
+        // maxHeight inlines height on the scroller which then ignores drags.
+        // Promote it to the container so the initial size is honored and the
+        // scroller is free to grow with future drags.
+        if (typeof options.maxHeight !== 'undefined') {
+            easyMDEContainer.style.height = options.maxHeight;
+            resizeScroller.style.height = '';
+        }
+        // Make the CM wrapper fill whatever the container currently offers,
+        // so toolbar + editor + statusbar stay laid out correctly as the
+        // container is dragged.
+        resizeWrapper.style.height = 'auto';
+
+        var cmInstance = this.codemirror;
+        var applyContainerSize = function () {
+            var containerW = easyMDEContainer.offsetWidth;
+            var containerH = easyMDEContainer.offsetHeight;
+            // Compute the editor's share of the vertical space, subtracting
+            // toolbar + statusbar so those stay visible inside the container.
+            var editorH = containerH;
+            if (self.gui.toolbar) editorH -= self.gui.toolbar.offsetHeight;
+            if (self.gui.statusbar) editorH -= self.gui.statusbar.offsetHeight;
+            if (editorH < 0) editorH = 0;
+            // Height is always constrained to the container so the statusbar
+            // stays visible (the container is `overflow: hidden` and may have
+            // been given a fixed height via `maxHeight`). `resizesHeight` only
+            // governs whether the user can drag the height handle.
+            cmInstance.setSize(
+                resizesWidth ? containerW : null,
+                editorH,
+            );
+            return { w: containerW, h: containerH };
+        };
+
+        // Size the editor to fit the initial container before handing off to
+        // the observer — otherwise the CM wrapper's auto height plus the
+        // scroller's minHeight can push the statusbar out of the clipped
+        // container until the user's first drag. Also pin the container's
+        // width in pixels here: `resize: horizontal` can't drag an element
+        // whose width is `auto`, so we need an explicit starting value.
+        setTimeout(function () {
+            if (resizesWidth) {
+                easyMDEContainer.style.width = easyMDEContainer.offsetWidth + 'px';
+            }
+            var initial = applyContainerSize();
+            if (ro) {
+                lastW = initial.w;
+                lastH = initial.h;
+            }
+        }, 0);
+
+        var ro = null;
+        var lastW = null, lastH = null;
+        if (typeof ResizeObserver !== 'undefined') {
+            ro = new ResizeObserver(function () {
+                var containerW = easyMDEContainer.offsetWidth;
+                var containerH = easyMDEContainer.offsetHeight;
+                if (containerW === lastW && containerH === lastH) return;
+                lastW = containerW;
+                lastH = containerH;
+                applyContainerSize();
+            });
+            ro.observe(easyMDEContainer);
+            this._resizeObserver = ro;
+        }
+    }
     if (options.autosave != undefined && options.autosave.enabled === true) {
         this.autosave(); // use to load localstorage content
         this.codemirror.on('change', function () {
@@ -3116,6 +3201,11 @@ EasyMDE.prototype.toTextArea = function () {
     var cm = this.codemirror;
     var wrapper = cm.getWrapperElement();
     var easyMDEContainer = wrapper.parentNode;
+
+    if (this._resizeObserver) {
+        this._resizeObserver.disconnect();
+        this._resizeObserver = null;
+    }
 
     if (easyMDEContainer) {
         if (this.gui.toolbar) {

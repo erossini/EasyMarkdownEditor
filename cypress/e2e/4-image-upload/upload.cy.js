@@ -6,7 +6,7 @@ describe('Upload', () => {
     });
 
     it('upload an image should insert a mock image url', () => {
-        cy.get('.EasyMDEContainer button.upload-image').click();
+        cy.get('.EasyMDEContainer button.mde-upload-image').click();
         cy.get('.EasyMDEContainer input[type=file]').selectFile({
             contents: Cypress.Buffer.from('', 'utf-8'),
             fileName: 'test.jpg',

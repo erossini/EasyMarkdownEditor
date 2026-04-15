@@ -158,6 +158,18 @@ easyMDE.value('New input for **EasyMDE**');
 - **markdownUrl**: Customize url for guide.
 - **minHeight**: Sets the minimum height for the composition area, before it starts auto-growing. Should be a string containing a valid CSS value like `"500px"`. Defaults to `"300px"`.
 - **maxHeight**: Sets fixed height for the composition area. `minHeight` option will be ignored. Should be a string containing a valid CSS value like `"500px"`. Defaults to `undefined`.
+- **resize**: Adds a drag handle to the editor so the user can grow or shrink it at runtime. Accepts `true` (alias for `"vertical"`), `"vertical"`, `"horizontal"`, or `"both"`. Defaults to `false` (not resizable). When enabled, the handle is attached to the whole `.EasyMDEContainer`, so the toolbar and status bar follow the drag in lockstep with the editing area — the CodeMirror area itself is sized to fill the container minus the toolbar and status bar. `maxHeight`, if provided, becomes the *initial* container height (rather than a fixed height on the editor). Powered by `ResizeObserver`; in browsers without it the handle still works but CodeMirror's internal layout is not refreshed on drag.
+
+  Example:
+
+  ```js
+  new EasyMDE({
+      resize: 'vertical',   // or true, 'horizontal', 'both'
+      maxHeight: '300px',   // initial height
+  });
+  ```
+
+  See `example/index_resize.html` for a live demo of all three directions.
 - **onToggleFullScreen**: A function that gets called when the editor's full screen mode is toggled. The function will be passed a boolean as parameter, `true` when the editor is currently going into full screen mode, or `false`.
 - **parsingConfig**: Adjust settings for parsing the Markdown during editing (not previewing).
   - **allowAtxHeaderWithoutSpace**: If set to `true`, will render headers without a space after the `#`. Defaults to `false`.
@@ -222,7 +234,7 @@ easyMDE.value('New input for **EasyMDE**');
 - **toolbar**: If set to `false`, hide the toolbar. Defaults to the [array of icons](#toolbar-icons).
 - **toolbarTitles**: Customize the title used to toolbar.
 - **toolbarTips**: If set to `false`, disable toolbar button tips. Defaults to `true`.
-- **toolbarButtonClassPrefix**: Adds a prefix to the toolbar button classes when set. For example, a value of `"mde"` results in `"mde-bold"` for the Bold button.
+- **toolbarButtonClassPrefix**: Prefix applied to every toolbar button class, so selectors become `"mde-bold"`, `"mde-table"`, etc. Defaults to `"mde"` to avoid collisions with CSS frameworks (notably Bootstrap, which defines its own `.table`, `.image`, `.link` rules). Set it to a different string to use a custom prefix, or to `""` (empty string) to disable prefixing entirely (not recommended when loading Bootstrap or similar).
 - **direction**: `rtl` or `ltr`. Changes text direction to support right-to-left languages. Defaults to `ltr`.
 
 

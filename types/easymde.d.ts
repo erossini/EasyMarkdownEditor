@@ -195,6 +195,7 @@ declare namespace EasyMDE {
         lineWrapping?: boolean;
         minHeight?: string;
         maxHeight?: string;
+        resize?: boolean | 'vertical' | 'horizontal' | 'both' | 'none';
         parsingConfig?: ParsingOptions;
         placeholder?: string;
         previewClass?: string | ReadonlyArray<string>;
