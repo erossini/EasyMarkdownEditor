@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example / Syntax highlighting</title>
+    <link rel="stylesheet" href="../dist/easymde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github.min.css">
+    <script src="../dist/easymde.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/highlight.min.js"></script>
+</head>
+
+<body>
+    <textarea>
+# Syntax highlighting demo
+
+Fenced code blocks get highlighted by highlight.js in the preview.
+
+```csharp
+using System;
+
+public class Greeter
+{
+    public static void Main()
+    {
+        var name = "world";
+        Console.WriteLine($"Hello, {name}!");
+    }
+}
+```
+
+```javascript
+const sum = (a, b) => a + b;
+console.log(sum(2, 3));
+```
+
+```python
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+```
+    </textarea>
+    <script>
+        const easyMDE = new EasyMDE({
+            previewRender: function (plainText) {
+                const container = document.createElement('div');
+                container.innerHTML = easyMDE.markdown(plainText);
+                container.querySelectorAll('pre code').forEach(function (block) {
+                    window.hljs.highlightElement(block);
+                });
+                return container.innerHTML;
+            },
+        });
+    </script>
+</body>
+
+</html>

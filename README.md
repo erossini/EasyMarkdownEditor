@@ -592,6 +592,61 @@ easyMDE = null;
 If you need to remove registered event listeners (when the editor is not needed anymore), call `easyMDE.cleanup()`.
 
 
+### Extending the preview (Mermaid diagrams & syntax highlighting)
+
+The `previewRender` option lets you post-process the HTML that EasyMDE's built-in `marked` renderer produces. Two common extensions are rendering [Mermaid](https://mermaid.js.org/) diagrams and highlighting fenced code blocks with [highlight.js](https://highlightjs.org/). Working examples live in `example/index_mermaid.html` and `example/index_highlight.html`.
+
+**1. Load the libraries from a CDN** (no build step required — EasyMDE itself is unchanged):
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/highlight.min.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: false });
+    window.__mermaid = mermaid;
+</script>
+```
+
+**2. Override `previewRender`** to swap ` ```mermaid ` blocks for `<div class="mermaid">` nodes, then highlight the remaining code blocks:
+
+```js
+const easyMDE = new EasyMDE({
+    previewRender: function (plainText, preview) {
+        const container = document.createElement('div');
+        container.innerHTML = easyMDE.markdown(plainText);
+
+        // Convert ```mermaid fences to <div class="mermaid">.
+        container.querySelectorAll('code.language-mermaid').forEach(function (code) {
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = code.textContent;
+            const pre = code.closest('pre') || code;
+            pre.parentNode.replaceChild(div, pre);
+        });
+
+        // Highlight remaining fenced code blocks.
+        if (window.hljs) {
+            container.querySelectorAll('pre code').forEach(function (block) {
+                window.hljs.highlightElement(block);
+            });
+        }
+
+        // Render Mermaid asynchronously after the preview is in the DOM.
+        if (window.__mermaid) {
+            setTimeout(function () {
+                window.__mermaid.run({ nodes: preview.querySelectorAll('.mermaid') });
+            }, 0);
+        }
+
+        return container.innerHTML;
+    },
+});
+```
+
+Author diagrams and code with the standard fenced syntax — ` ```mermaid `, ` ```csharp `, ` ```javascript `, etc. `marked` emits `class="language-<lang>"` on the `<code>` element, which is exactly what both Mermaid detection and highlight.js key off.
+
+
 ### Useful methods
 
 The following self-explanatory methods may be of use while developing with EasyMDE.

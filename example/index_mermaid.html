@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example / Mermaid</title>
+    <link rel="stylesheet" href="../dist/easymde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/styles/github.min.css">
+    <script src="../dist/easymde.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.10.0/build/highlight.min.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false });
+        window.__mermaid = mermaid;
+    </script>
+</head>
+
+<body>
+    <textarea>
+# Mermaid demo
+
+Write a fenced block with the `mermaid` language tag and it will render in the preview.
+
+```mermaid
+flowchart LR
+    A[Write Markdown] --> B{Preview?}
+    B -- yes --> C[Render Mermaid]
+    B -- no  --> D[Keep editing]
+```
+
+```mermaid
+sequenceDiagram
+    Alice->>Bob: Hello Bob
+    Bob-->>Alice: Hi Alice
+```
+
+Regular fenced code blocks are syntax-highlighted with highlight.js:
+
+```csharp
+using System;
+
+public class Greeter
+{
+    public static void Main()
+    {
+        var name = "world";
+        Console.WriteLine($"Hello, {name}!");
+    }
+}
+```
+
+```javascript
+const sum = (a, b) => a + b;
+console.log(sum(2, 3));
+```
+    </textarea>
+    <script>
+        let diagramSeq = 0;
+
+        const easyMDE = new EasyMDE({
+            previewRender: function (plainText, preview) {
+                // Base HTML from the built-in marked renderer.
+                const html = easyMDE.markdown(plainText);
+
+                // Swap <pre><code class="language-mermaid">...</code></pre> for <div class="mermaid">.
+                const container = document.createElement('div');
+                container.innerHTML = html;
+                const blocks = container.querySelectorAll('code.language-mermaid, code[class*="lang-mermaid"]');
+                blocks.forEach(function (code) {
+                    const div = document.createElement('div');
+                    div.className = 'mermaid';
+                    div.textContent = code.textContent;
+                    const pre = code.closest('pre') || code;
+                    pre.parentNode.replaceChild(div, pre);
+                });
+
+                // Highlight remaining code blocks with highlight.js.
+                if (window.hljs) {
+                    container.querySelectorAll('pre code').forEach(function (block) {
+                        window.hljs.highlightElement(block);
+                    });
+                }
+
+                // Render asynchronously; mermaid.run walks the preview for .mermaid nodes.
+                if (window.__mermaid) {
+                    const token = ++diagramSeq;
+                    setTimeout(function () {
+                        if (token !== diagramSeq) return;
+                        window.__mermaid.run({ nodes: preview.querySelectorAll('.mermaid') }).catch(function (e) {
+                            console.error('mermaid render failed', e);
+                        });
+                    }, 0);
+                }
+
+                return container.innerHTML;
+            },
+        });
+    </script>
+</body>
+
+</html>
