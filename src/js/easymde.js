@@ -407,6 +407,22 @@ function toggleFullScreen(editor) {
         }
     }
 
+    // Apply (or clear) a custom fullscreen z-index so consumers can lift the
+    // editor above page elements that sit above the default stacking value
+    // (the CSS defaults are 8 for the editor and 9 for the toolbar/preview).
+    if (typeof editor.options.fullScreenZIndex !== 'undefined') {
+        var base = parseInt(editor.options.fullScreenZIndex, 10);
+        if (cm.getOption('fullScreen')) {
+            wrapper.style.zIndex = base;
+            if (editor.toolbar_div) editor.toolbar_div.style.zIndex = base + 1;
+            if (sidebyside) sidebyside.style.zIndex = base + 1;
+        } else {
+            wrapper.style.removeProperty('z-index');
+            if (editor.toolbar_div) editor.toolbar_div.style.removeProperty('z-index');
+            if (sidebyside) sidebyside.style.removeProperty('z-index');
+        }
+    }
+
     // Update toolbar class
     editor.toolbar_div.classList.toggle('fullscreen');
 
@@ -1909,11 +1925,16 @@ function EasyMDE(options) {
 
     options.direction = options.direction || 'ltr';
 
-    if (typeof options.maxHeight !== 'undefined') {
-        // Min and max height are equal if maxHeight is set
-        options.minHeight = options.maxHeight;
-    } else {
-        options.minHeight = options.minHeight || '300px';
+    // If the caller explicitly set `minHeight`, honor it so the editor can
+    // grow from that starting size up to `maxHeight` before scrolling kicks
+    // in. Only fall back to "min equals max" (the historical fixed-height
+    // behavior) when `minHeight` was omitted.
+    if (typeof options.minHeight === 'undefined') {
+        if (typeof options.maxHeight !== 'undefined') {
+            options.minHeight = options.maxHeight;
+        } else {
+            options.minHeight = '300px';
+        }
     }
 
     options.errorCallback = options.errorCallback || function (errorMessage) {
@@ -2240,7 +2261,15 @@ EasyMDE.prototype.render = function (el) {
     this.codemirror.getScrollerElement().style.minHeight = options.minHeight;
 
     if (typeof options.maxHeight !== 'undefined') {
-        this.codemirror.getScrollerElement().style.height = options.maxHeight;
+        // When min and max differ, let the editor grow from min up to max and
+        // scroll past that — using `max-height` (not a fixed `height`). When
+        // they're equal (no minHeight was provided), keep the historical
+        // fixed-height behavior so existing consumers are unaffected.
+        if (options.minHeight !== options.maxHeight) {
+            this.codemirror.getScrollerElement().style.maxHeight = options.maxHeight;
+        } else {
+            this.codemirror.getScrollerElement().style.height = options.maxHeight;
+        }
     }
 
     if (options.forceSync === true) {

@@ -217,6 +217,7 @@ declare namespace EasyMDE {
         toolbarTips?: boolean;
         toolbarButtonClassPrefix?: string;
         onToggleFullScreen?: (goingIntoFullScreen: boolean) => void;
+        fullScreenZIndex?: number | string;
         theme?: string;
         scrollbarStyle?: string;
         unorderedListStyle?: '*' | '-' | '+';

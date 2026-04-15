@@ -156,8 +156,18 @@ easyMDE.value('New input for **EasyMDE**');
 - **lineNumbers**: If set to `true`, enables line numbers in the editor.
 - **lineWrapping**: If set to `false`, disable line wrapping. Defaults to `true`.
 - **markdownUrl**: Customize url for guide.
-- **minHeight**: Sets the minimum height for the composition area, before it starts auto-growing. Should be a string containing a valid CSS value like `"500px"`. Defaults to `"300px"`.
-- **maxHeight**: Sets fixed height for the composition area. `minHeight` option will be ignored. Should be a string containing a valid CSS value like `"500px"`. Defaults to `undefined`.
+- **minHeight**: Sets the minimum height of the composition area, before it starts auto-growing. Should be a string containing a valid CSS value like `"500px"`. Defaults to `"300px"`.
+- **maxHeight**: Caps the height of the composition area. Should be a string containing a valid CSS value like `"500px"`. Defaults to `undefined`. Behavior depends on whether you also set `minHeight`:
+    - **Both `minHeight` and `maxHeight` set** (and they differ) — the editor starts at `minHeight`, grows with the content up to `maxHeight`, and then scrolls internally. This is the "grow to a point, then scroll" pattern.
+    - **Only `maxHeight` set** — the editor is given a fixed height equal to `maxHeight` (the historical behavior; kept for backward compatibility).
+- **fullScreenZIndex**: Overrides the z-index applied to the editor when it goes fullscreen. Accepts a number or a CSS value as string. Defaults to `undefined`, in which case the stylesheet values are used (`8` for the editor, `9` for the toolbar/preview). Useful when your page has elements with a higher z-index (sticky headers, overlays, toasts, modals from UI frameworks) that would otherwise cover the fullscreen editor. When set, the editor gets the given value, and the toolbar + side-by-side preview get `value + 1` to stay above it.
+
+  ```js
+  new EasyMDE({
+      fullScreenZIndex: 1050,   // above Bootstrap modals (default z-index 1040)
+  });
+  ```
+
 - **resize**: Adds a drag handle to the editor so the user can grow or shrink it at runtime. Accepts `true` (alias for `"vertical"`), `"vertical"`, `"horizontal"`, or `"both"`. Defaults to `false` (not resizable). When enabled, the handle is attached to the whole `.EasyMDEContainer`, so the toolbar and status bar follow the drag in lockstep with the editing area — the CodeMirror area itself is sized to fill the container minus the toolbar and status bar. `maxHeight`, if provided, becomes the *initial* container height (rather than a fixed height on the editor). Powered by `ResizeObserver`; in browsers without it the handle still works but CodeMirror's internal layout is not refreshed on drag.
 
   Example:
