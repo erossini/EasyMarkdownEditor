@@ -1505,138 +1505,138 @@ var iconClassMap = {
 
 var toolbarBuiltInButtons = {
     'bold': {
-        name: 'mde-tb-bold',
+        name: 'bold',
         action: toggleBold,
         className: iconClassMap['bold'],
         title: 'Bold',
         default: true,
     },
     'italic': {
-        name: 'mde-tb-italic',
+        name: 'italic',
         action: toggleItalic,
         className: iconClassMap['italic'],
         title: 'Italic',
         default: true,
     },
     'strikethrough': {
-        name: 'mde-tb-strikethrough',
+        name: 'strikethrough',
         action: toggleStrikethrough,
         className: iconClassMap['strikethrough'],
         title: 'Strikethrough',
     },
     'heading': {
-        name: 'mde-tb-heading',
+        name: 'heading',
         action: toggleHeadingSmaller,
         className: iconClassMap['heading'],
         title: 'Heading',
         default: true,
     },
     'heading-smaller': {
-        name: 'mde-tb-heading-smaller',
+        name: 'heading-smaller',
         action: toggleHeadingSmaller,
         className: iconClassMap['heading-smaller'],
         title: 'Smaller Heading',
     },
     'heading-bigger': {
-        name: 'mde-tb-heading-bigger',
+        name: 'heading-bigger',
         action: toggleHeadingBigger,
         className: iconClassMap['heading-bigger'],
         title: 'Bigger Heading',
     },
     'heading-1': {
-        name: 'mde-tb-heading-1',
+        name: 'heading-1',
         action: toggleHeading1,
         className: iconClassMap['heading-1'],
         title: 'Big Heading',
     },
     'heading-2': {
-        name: 'mde-tb-heading-2',
+        name: 'heading-2',
         action: toggleHeading2,
         className: iconClassMap['heading-2'],
         title: 'Medium Heading',
     },
     'heading-3': {
-        name: 'mde-tb-heading-3',
+        name: 'heading-3',
         action: toggleHeading3,
         className: iconClassMap['heading-3'],
         title: 'Small Heading',
     },
     'separator-1': {
-        name: 'mde-tb-separator-1',
+        name: 'separator-1',
     },
     'code': {
-        name: 'mde-tb-code',
+        name: 'code',
         action: toggleCodeBlock,
         className: iconClassMap['code'],
         title: 'Code',
     },
     'quote': {
-        name: 'mde-tb-quote',
+        name: 'quote',
         action: toggleBlockquote,
         className: iconClassMap['quote'],
         title: 'Quote',
         default: true,
     },
     'unordered-list': {
-        name: 'mde-tb-unordered-list',
+        name: 'unordered-list',
         action: toggleUnorderedList,
         className: iconClassMap['unordered-list'],
         title: 'Generic List',
         default: true,
     },
     'ordered-list': {
-        name: 'mde-tb-ordered-list',
+        name: 'ordered-list',
         action: toggleOrderedList,
         className: iconClassMap['ordered-list'],
         title: 'Numbered List',
         default: true,
     },
     'clean-block': {
-        name: 'mde-tb-clean-block',
+        name: 'clean-block',
         action: cleanBlock,
         className: iconClassMap['clean-block'],
         title: 'Clean block',
     },
     'separator-2': {
-        name: 'mde-tb-separator-2',
+        name: 'separator-2',
     },
     'link': {
-        name: 'mde-tb-link',
+        name: 'link',
         action: drawLink,
         className: iconClassMap['link'],
         title: 'Create Link',
         default: true,
     },
     'image': {
-        name: 'mde-tb-image',
+        name: 'image',
         action: drawImage,
         className: iconClassMap['image'],
         title: 'Insert Image',
         default: true,
     },
     'upload-image': {
-        name: 'mde-tb-upload-image',
+        name: 'upload-image',
         action: drawUploadedImage,
         className: iconClassMap['upload-image'],
         title: 'Import an image',
     },
     'table': {
-        name: 'mde-tb-table',
+        name: 'table',
         action: drawTable,
         className: iconClassMap['table'],
         title: 'Insert Table',
     },
     'horizontal-rule': {
-        name: 'mde-tb-horizontal-rule',
+        name: 'horizontal-rule',
         action: drawHorizontalRule,
         className: iconClassMap['horizontal-rule'],
         title: 'Insert Horizontal Line',
     },
     'separator-3': {
-        name: 'mde-tb-separator-3',
+        name: 'separator-3',
     },
     'preview': {
-        name: 'mde-tb-preview',
+        name: 'preview',
         action: togglePreview,
         className: iconClassMap['preview'],
         noDisable: true,
@@ -1644,7 +1644,7 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'side-by-side': {
-        name: 'mde-tb-side-by-side',
+        name: 'side-by-side',
         action: toggleSideBySide,
         className: iconClassMap['side-by-side'],
         noDisable: true,
@@ -1653,7 +1653,7 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'fullscreen': {
-        name: 'mde-tb-fullscreen',
+        name: 'fullscreen',
         action: toggleFullScreen,
         className: iconClassMap['fullscreen'],
         noDisable: true,
@@ -1662,10 +1662,10 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'separator-4': {
-        name: 'mde-tb-separator-4',
+        name: 'separator-4',
     },
     'guide': {
-        name: 'mde-tb-guide',
+        name: 'guide',
         action: 'https://www.markdownguide.org/basic-syntax/',
         className: iconClassMap['guide'],
         noDisable: true,
@@ -1673,34 +1673,34 @@ var toolbarBuiltInButtons = {
         default: true,
     },
     'separator-5': {
-        name: 'mde-tb-separator-5',
+        name: 'separator-5',
     },
     'undo': {
-        name: 'mde-tb-undo',
+        name: 'undo',
         action: undo,
         className: iconClassMap['undo'],
         noDisable: true,
         title: 'Undo',
     },
     'redo': {
-        name: 'mde-tb-redo',
+        name: 'redo',
         action: redo,
         className: iconClassMap['redo'],
         noDisable: true,
         title: 'Redo',
     },
     'separator-6': {
-        name: 'mde-tb-separator-6',
+        name: 'separator-6',
     },
     'indent': {
-        name: 'mde-tb-indent',
+        name: 'indent',
         action: indent,
         className: iconClassMap['indent'],
         noDisable: true,
         title: 'Indent',
     },
     'outdent': {
-        name: 'mde-tb-outdent',
+        name: 'outdent',
         action: outdent,
         className: iconClassMap['outdent'],
         noDisable: true,
@@ -2850,7 +2850,7 @@ EasyMDE.prototype.createStatusbar = function (status) {
                 };
                 onActivity = function (el) {
                     var pos = cm.getCursor();
-                    el.innerHTML = pos.line + ':' + pos.ch;
+                    el.innerHTML = (pos.line + 1) + ':' + (pos.ch + 1);
                 };
             } else if (name === 'autosave') {
                 defaultValue = function (el) {
