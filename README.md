@@ -197,7 +197,7 @@ easyMDE.value('New input for **EasyMDE**');
   - **image**: The text to use when prompting for an image's URL.  Defaults to `URL of the image:`.
   - **link**: The text to use when prompting for a link's URL. Defaults to `URL for the link:`.
 - **iconClassMap**: Used to specify the icon class names for the various toolbar buttons.
-- **uploadImage**: If set to `true`, enables the image upload functionality, which can be triggered by drag and drop, copy-paste and through the browse-file window (opened when the user click on the *upload-image* icon). Defaults to `false`.
+- **uploadImage**: If set to `true`, enables the image upload functionality, which can be triggered by drag and drop, copy-paste (including clipboard-only images such as screenshots) and through the browse-file window (opened when the user click on the *upload-image* icon). Defaults to `false`. See `example/index_image_paste.html` for a runnable demo that uses `imageUploadFunction` to embed the pasted image as a data URL, so you can test without a server.
 - **imageMaxSize**: Maximum image size in bytes, checked before upload (note: never trust client, always check the image size at server-side). Defaults to `1024 * 1024 * 2` (2 MB).
 - **imageAccept**: A comma-separated list of mime-types used to check image type before upload (note: never trust client, always check file types at server-side). Defaults to `image/png, image/jpeg`.
 - **imageUploadFunction**: A custom function for handling the image upload. Using this function will render the options `imageMaxSize`, `imageAccept`, `imageUploadEndpoint` and `imageCSRFToken` ineffective.

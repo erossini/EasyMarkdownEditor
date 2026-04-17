@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example / Image paste</title>
+    <link rel="stylesheet" href="../dist/easymde.min.css">
+    <script src="../dist/easymde.min.js"></script>
+</head>
+
+<body>
+    <p>Copy an image (e.g. a screenshot) to the clipboard and paste it into the editor below, or drag &amp; drop an image file.</p>
+    <textarea></textarea>
+    <script>
+        const easyMDE = new EasyMDE({
+            uploadImage: true,
+            imageUploadFunction: function (file, onSuccess, onError) {
+                const reader = new FileReader();
+                reader.onload = function () { onSuccess(reader.result); };
+                reader.onerror = function () { onError('Could not read the pasted image.'); };
+                reader.readAsDataURL(file);
+            },
+        });
+    </script>
+</body>
+
+</html>

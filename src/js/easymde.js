@@ -2107,10 +2107,35 @@ function EasyMDE(options) {
         });
 
         this.codemirror.on('paste', function (cm, event) {
+            var clipboardData = event.clipboardData;
+            if (!clipboardData) return;
+
+            var imageFiles = [];
+            if (clipboardData.items) {
+                for (var i = 0; i < clipboardData.items.length; i++) {
+                    var item = clipboardData.items[i];
+                    if (item.kind === 'file' && item.type.indexOf('image/') === 0) {
+                        var file = item.getAsFile();
+                        if (file) imageFiles.push(file);
+                    }
+                }
+            }
+            if (imageFiles.length === 0 && clipboardData.files) {
+                for (var j = 0; j < clipboardData.files.length; j++) {
+                    var f = clipboardData.files[j];
+                    if (f.type.indexOf('image/') === 0) {
+                        imageFiles.push(f);
+                    }
+                }
+            }
+
+            if (imageFiles.length === 0) return;
+
+            event.preventDefault();
             if (options.imageUploadFunction) {
-                self.uploadImagesUsingCustomFunction(options.imageUploadFunction, event.clipboardData.files);
+                self.uploadImagesUsingCustomFunction(options.imageUploadFunction, imageFiles);
             } else {
-                self.uploadImages(event.clipboardData.files);
+                self.uploadImages(imageFiles);
             }
         });
     }
